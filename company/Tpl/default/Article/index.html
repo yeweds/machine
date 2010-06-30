@@ -1,0 +1,36 @@
+<include file="Public:header" />
+<div class="main940">
+
+<div class="sub">
+<div class="title"><h2>新闻动态</h2></div>
+
+<ul class="subList">
+<volist name="cate" id="vol">
+<li class="blue"><a href="__ROOT__/Article/index/id/{$vol.id}.html"><strong>{$vol.title}</strong></a></li>
+</volist>
+</ul>
+<div class="subg"></div>
+</div>
+<!-- sub -->
+
+<div class="main">
+<div class="banner"><img src="../Public/images/br.jpg" /></div>
+<div class="location"><span>当前位置：</span><a href="">首页</a> > {$Ctitle.title} </div>
+<div class="title"><h1>{$Ctitle.title}</h1></div>
+
+<div class="mainList">
+<ul class="newList">
+<volist name="list" id="vo">
+<li><a href="__ROOT__/Article/{$vo.id}.html">{$vo.subject}</a>{$vo.postdate|date="Y-m-d",###}</li>
+</volist>
+</ul>
+</div>
+
+<div class="pages">{$page}</div>
+
+</div>
+<!-- main -->
+</div>
+<!-- main940 -->
+
+<include file="Public:footer" />

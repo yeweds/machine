@@ -1,0 +1,81 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">添加留言</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回留言</a></h3>
+		
+        
+          <table width="100%"><form method="post" name="form1" action="__URL__/adds">
+            <tr>
+              <td>留言类型</td>
+              <td>
+                <input name="type" type="radio" value="gbook" checked="checked"  class="checkbox " />
+        网站留言
+        <input name="type" type="radio" class="checkbox" value="advice" />
+        建议
+        <input name="type" type="radio" value="complain"  class="checkbox" />
+        投诉
+        <input name="type" type="radio" value="praise"  class="checkbox" />合作交流
+        <input type="radio" name="type" value="question"  class="checkbox" />
+        售后反馈
+        <input name="type" type="radio" value="order"  class="checkbox" />
+        产品订购 </td>
+            </tr>
+            <tr>
+              <td>真实姓名</td>
+              <td>
+                <input name="username" type="text" id="username"  class="txt redtxt"/>
+&nbsp;&nbsp; &nbsp;性  别:
+        <input name="sex" type="radio" value="1" checked="checked" class="checkbox"/>男
+        <input type="radio" name="sex" value="0" class="checkbox"/>
+        女</td>
+            </tr>
+            <tr>
+              <td>留言内容</td>
+              <td>
+                <textarea name="content" cols="48" rows="5" class="redtxt" id="content"></textarea></td>
+            </tr>
+            <tr>
+              <td>联系方式</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>电　　话</td>
+              <td>
+                <input name="tel" type="text" id="tel" class="txt"/>传　　真:
+        <input name="fax" type="text" id="fax" class="txt"/></td>
+            </tr>
+            <tr>
+              <td>QQ</td>
+              <td>
+                <input name="qq" type="text" id="qq" class="txt"/>
+        　　　邮箱:
+        <input name="email" type="text" id="email" class="txt"/></td>
+            </tr>
+            <tr>
+              <td>网址：</td>
+              <td><input name="web" type="text" id="web" class="txt"/>
+  
+          <input name="ischecked" type="checkbox" id="ischecked" value="1" checked="checked" class="checkbox"/>是否隐藏
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><input name="ip" type="text" id="ip" value="<?php echo $_SERVER["REMOTE_ADDR"]; ?>" readonly class="txt"/></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>
+                <input type="submit" name="Submit2" value="确定新增" class="inputButton" />
+                <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+            </tr>
+          </form></table>
+        <p class="i">红色标记的内容必须填写</p>
+        <br>
+<include file="Public:footer" />

@@ -1,0 +1,60 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">用户管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋添加用户</a><a href="__APP__/Usergroup" class="sgbtn">＋用户组管理</a></h3>
+		
+      
+				
+				<table class="fixwidth"> <form method="POST" name="form1" action="__URL__">
+					<tr>
+						<td>用 户 名:
+					    <input name="keyword" type="text" class="txt" id="keyword" />					    <input type="submit" value="搜索" class="inputButton" /></td>
+				  </tr>
+				</form> </table>
+
+          <table class="datalist fixwidth" ><form name="form1" method="post" action="__URL__/submit">
+            <tr>
+              <th><input name="checkbox" type="checkbox" class="checkbox"  onClick="selAll(this)" value="选择">
+                  选择</th>
+              <th>用 户 名</th>
+              <th>真实姓名</th>
+              <th>类型</th>
+              <th>是/否锁定</th>
+              <th>注册时间</th>
+              <th>操作</th>
+            </tr><present name="list">
+            <volist name="list" id="vo">
+            <tr>
+              <td class="option"><if condition="$vo['memberid'] neq 1"><input name="id[]" type="checkbox" id="id[]" value="{$vo.memberid}" class="checkbox">{$vo.memberid}<else /><img src="../Public/images/ulocked.gif" alt="内置" align="absmiddle" /></if>                </td>
+              <td><strong>{$vo.username}</strong></td>
+              <td>{$vo.realname}</td>
+              <td>{$vo.grouptitle}</td>
+              <td><if condition="$vo['ischecked'] eq 1 "><img src="../Public/images/checked.gif" alt="正常" align="absmiddle" />
+                <else/><img src="../Public/images/uchecked.png" align="absmiddle" alt="锁定"/></if></td>
+              <td>{$vo.regtime|date="Y-m-d",###}</td>
+              <td><a href="__URL__/edit/id/{$vo.memberid}"><img src="../Public/images/edit.gif" alt="编辑" align="absmiddle" /></a>　
+                <neq name="vo['memberid']" value="1"><a href="__URL__/submit/act/delete/id/{$vo.memberid}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></neq></td>
+            </tr>
+            </volist>
+            <eq name="allowbat" value="1"> <tr class="nobg">
+              <td colspan="7"><font color="red">操作类型：</font><input name="act" type="radio"  class="checkbox" value="uischecked" checked="checked" />
+解锁
+<input name="act" type="radio" value="ischecked"  class="checkbox"/>
+锁定<input name="act" type="radio" class="checkbox" value="delete" >
+										     删除
+									          <input type="submit" value="提交操作" class="inputButton" onClick="return confirm('确定提交吗');" /></td>
+            </tr></eq>
+            <tr class="nobg">
+              <td colspan="7" class="tdpage">{$page}</td>
+            </tr><else />
+			  <tr><td colspan="7" align="center">无内容</td>
+			  </tr>
+			</present>
+          </form></table>
+        <p class="description i">删除不可恢复,谨慎操作　<font color="#FF0000">必须有一个超级管理员，内置管理员不允许删除及修改管理组</font></p>
+        <br>
+<include file="Public:footer" />

@@ -1,0 +1,70 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">添加用户</div>
+</div>
+<br><h3 ><a href="__URL__" class="sgbtn">＋返回用户管理</a></h3>
+		
+       
+          <table width="100%"> <form method="post" name="form1" action="__URL__/adds">
+            <tr>
+              <td>用 户 名
+                  <input name="username" type="text" id="username" class="txt redtxt"/> 密　　码
+                  <input name="password" type="password" id="password" class="txt redtxt"/></td>
+            </tr>
+            <tr>
+              <td>密保问题
+                  <input name="question" type="text" id="question" class="txt"/> 密保答案
+                  <input name="answer" type="text" id="answer" class="txt"/></td>
+            </tr>
+            <tr>
+              <td>用 户 组
+                  <select name="groupid" id="select">
+                   <volist name="group" id="vo">
+                    <option value="{$vo.id}" <eq name="vo['id']" value="3"> selected="selected"</eq>>{$vo.grouptitle}</option>
+                    </volist>
+                </select>
+                <a href="__APP__/Usergroup"><img src="../Public/images/group.gif" alt="用户组权限" border="0" align="absmiddle" /></a>
+                <input name="ischecked" type="radio" class="checkbox" value="1" checked="checked"/>
+                正常
+                <input name="ischecked" type="radio" value="0" class="checkbox"/>              
+               锁定</td>
+            </tr>
+            <tr>
+              <td>真实姓名
+                  <input name="realname" type="text" id="realname" class="txt"/> 
+                  性  别
+                  <input name="sex" type="radio" value="1" checked="checked" class="checkbox"/>男
+<input type="radio" name="sex" value="0" class="checkbox"/>
+女 </td>
+            </tr>
+            <tr>
+              <td>地　　址
+                  <input name="address" type="text" id="address" class="txt"/> 移动电话
+                  <input name="fax" type="text" id="fax" class="txt"/></td>
+            </tr>
+            <tr>
+              <td>电　　话
+                  <input name="telphone" type="text" id="telphone" class="txt"/> 
+                  邮　　箱
+                  <input name="email" type="text" id="email" class="txt"/></td>
+            </tr>
+            <tr>
+              <td>网　　址
+                  <input name="web" type="text" id="web" class="txt"/>
+                QQ　　
+            <input name="qq" type="text" id="qq" class="txt"/></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input type="submit" name="Submit2" value="确定新增" class="inputButton" />
+                  <input type="reset" name="Reset" value="还原重填" class="inputButton" />              </td>
+            </tr>
+         </form> </table>
+<p class="i">红色标记的内容必须填写</p>
+        <br>
+<include file="Public:footer" />

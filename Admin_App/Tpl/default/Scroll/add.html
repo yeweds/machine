@@ -1,0 +1,47 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">增加图片</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回图片管理</a></h3>
+		     
+          <table width="100%">   <form method="post" name="form1" action="__URL__/adds" enctype="multipart/form-data">
+            <tr>
+              <td>标题</td>
+              <td>
+                <input name="subject" type="text" class="txt redtxt" id="subject"  size="40" maxlength="50" />
+&nbsp;</td>
+            </tr>
+            <tr>
+              <td>链接</td>
+              <td>
+                <input name="url" type="text" class="txt redtxt" id="url"  size="40" /></td>
+            </tr>
+            <tr>
+              <td>图片</td>
+              <td><input name="img" type="file" id="img" />              </td>
+            </tr>
+            <tr>
+              <td>排序</td>
+              <td><input name="orders" type="text" class="dataInput" id="writter52"  value="0" size="8" /></td>
+            </tr>
+            <tr>
+              <td>描述</td>
+              <td><textarea name="content" cols="60" rows="5" class="dataInput" id="content"></textarea></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>
+               <input type="submit" name="Submit2" value="确定新增" class="inputButton" />
+              <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+            </tr>
+          </form></table>
+        <p class="i">图片尺为230px*330px</p>
+
+        <br>
+<include file="Public:footer" />

@@ -1,0 +1,125 @@
+[ 10-06-30 11:49:52 ]
+
+错误信息：[ company favicon.ico index ]无法加载模块favicon.ico
+错误页面：/index.php/favicon.ico
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 11:49:06] D:\wamp\www\company\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 11:49:06] D:\wamp\www\company\index.php (9) App->run()
+
+[ 10-06-30 11:49:55 ]
+
+错误信息：[ company favicon.ico index ]无法加载模块favicon.ico
+错误页面：/index.php/favicon.ico
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 11:49:06] D:\wamp\www\company\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 11:49:06] D:\wamp\www\company\index.php (9) App->run()
+
+[ 10-06-30 13:41:54 ]
+
+错误信息：[ company favicon.ico index ]无法加载模块favicon.ico
+错误页面：/index.php/favicon.ico
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 13:41:06] D:\wamp\www\company\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 13:41:06] D:\wamp\www\company\index.php (9) App->run()
+
+[ 10-06-30 13:41:57 ]
+
+错误信息：[ company favicon.ico index ]无法加载模块favicon.ico
+错误页面：/index.php/favicon.ico
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 13:41:06] D:\wamp\www\company\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 13:41:06] D:\wamp\www\company\index.php (9) App->run()
+
+[ 10-06-30 13:41:57 ]
+
+错误信息：[ company favicon.ico index ]无法加载模块favicon.ico
+错误页面：/index.php/favicon.ico
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 13:41:06] D:\wamp\www\company\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 13:41:06] D:\wamp\www\company\index.php (9) App->run()
+
+[ 10-06-30 13:41:58 ]
+
+错误信息：[ company company Tpl ]无法加载模块company
+错误页面：/index.php/company/Tpl/default/Public/images/order.jpg
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 13:41:06] D:\wamp\www\company\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 13:41:06] D:\wamp\www\company\index.php (9) App->run()
+
+[ 10-06-30 13:41:58 ]
+
+错误信息：[ company Product images ]非法操作images
+错误页面：/index.php/Product/images/closelabel.gif
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 13:41:06]  () Action->__call(images, Array)
+[10-06-30 13:41:06] D:\wamp\www\company\company\Temp\~runtime.php (7) ProductAction->images()
+[10-06-30 13:41:06] D:\wamp\www\company\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 13:41:06] D:\wamp\www\company\index.php (9) App->run()
+
+[ 10-06-30 13:41:59 ]
+
+错误信息：[ company Product images ]非法操作images
+错误页面：/index.php/Product/images/loading.gif
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 13:41:06]  () Action->__call(images, Array)
+[10-06-30 13:41:06] D:\wamp\www\company\company\Temp\~runtime.php (7) ProductAction->images()
+[10-06-30 13:41:06] D:\wamp\www\company\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 13:41:06] D:\wamp\www\company\index.php (9) App->run()
+
+[ 10-06-30 17:27:14 ]
+
+错误信息：[ company favicon.ico index ]无法加载模块favicon.ico
+错误页面：/index.php/favicon.ico
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 17:27:06] D:\wamp\www\machine\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 17:27:06] D:\wamp\www\machine\index.php (9) App->run()
+
+[ 10-06-30 17:27:17 ]
+
+错误信息：[ company favicon.ico index ]无法加载模块favicon.ico
+错误页面：/index.php/favicon.ico
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 17:27:06] D:\wamp\www\machine\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 17:27:06] D:\wamp\www\machine\index.php (9) App->run()
+
+[ 10-06-30 17:27:27 ]
+
+错误信息：[ company Product images ]非法操作images
+错误页面：/index.php/Product/images/loading.gif
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 17:27:06]  () Action->__call(images, Array)
+[10-06-30 17:27:06] D:\wamp\www\machine\company\Temp\~runtime.php (7) ProductAction->images()
+[10-06-30 17:27:06] D:\wamp\www\machine\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 17:27:06] D:\wamp\www\machine\index.php (9) App->run()
+
+[ 10-06-30 17:27:27 ]
+
+错误信息：[ company company Tpl ]无法加载模块company
+错误页面：/index.php/company/Tpl/default/Public/images/order.jpg
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 17:27:06] D:\wamp\www\machine\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 17:27:06] D:\wamp\www\machine\index.php (9) App->run()
+
+[ 10-06-30 17:27:28 ]
+
+错误信息：[ company Product images ]非法操作images
+错误页面：/index.php/Product/images/closelabel.gif
+错误类型：ThinkException
+错误跟踪：
+[10-06-30 17:27:06]  () Action->__call(images, Array)
+[10-06-30 17:27:06] D:\wamp\www\machine\company\Temp\~runtime.php (7) ProductAction->images()
+[10-06-30 17:27:06] D:\wamp\www\machine\company\Temp\~runtime.php (7) App->exec()
+[10-06-30 17:27:06] D:\wamp\www\machine\index.php (9) App->run()
+

@@ -1,0 +1,44 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">用户组管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋添加用户组</a><a href="__APP__/Member/add" class="sgbtn">＋添加用户</a></h3>
+		
+        
+          <table class="datalist fixwidth" ><form name="form1" method="post" action="__URL__/submit">
+            <tr>
+              <th><!--input name="checkbox" type="checkbox" class="checkbox" id="uid[]" onClick="selAll(this)" value="选择全部"-->
+                  ID</th>
+              <th>用户组名称</th>
+              <th>操作</th>
+            </tr><present name="list">
+            <volist name="list" id="vo">
+            <tr>
+              <td class="option">
+          
+                {$vo.id}</td>
+              <td><strong>{$vo.grouptitle}</strong></td>
+              <td>
+              
+               <if condition="$vo['id'] eq 1">
+内置
+			<elseif condition="$vo['id'] eq 2" />
+内置
+              <else />
+              <a href="__URL__/edit/id/{$vo.id}"><img src="../Public/images/edit.gif" alt="编辑" align="absmiddle" /></a>　<neq name="vo['id']" value="3"><a href="__URL__/submit/act/delete/id/{$vo.id}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></neq>
+              </a>
+              </if>
+ </td>
+            </tr>
+            </volist>
+         <else />
+			  <tr><td colspan="6" align="center">无内容</td>
+			  </tr>
+			</present>
+         </form> </table>
+<p class="i">用户组删除后，所属这个组的用户将会转移到“禁止访问”用户组</p>
+        <br>
+<include file="Public:footer" />

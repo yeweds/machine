@@ -1,0 +1,84 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">添加产品</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回产品管理</a></h3>
+
+				<table width="100%">  <form method="post" name="form1" action="__URL__/adds" enctype="multipart/form-data" >
+					<tr>
+					  <td>类别名称
+    <select name="cid"  id="select">
+ <volist name="cate" id="vo"><option value="{$vo.id}" <eq name="vo['id']" value="$cid">selected="selected"</eq>>{$vo.title}</option></volist>
+      </select>
+    产品名称
+    <input name="subject" type="text" class="txt redtxt" id="subject" size="40"/>
+    <select name="color" id="color">
+      <option value="" >默认颜色</option>
+      <option value="#87CEEB" style="background-color:#87CEEB;color:#87CEEB">#87CEEB</option>
+      <option value="#4169E1" style="background-color:#4169E1;color:#4169E1">#4169E1</option>
+      <option value="#0000FF" style="background-color:#0000FF;color:#0000FF">#0000FF</option>
+      <option value="#00008B" style="background-color:#00008B;color:#00008B">#00008B</option>
+      <option value="#FFA500" style="background-color:#FFA500;color:#FFA500">#FFA500</option>
+      <option value="#FF4500" style="background-color:#FF4500;color:#FF4500">#FF4500</option>
+      <option value="#8B0000" style="background-color:#8B0000;color:#8B0000">#8B0000</option>
+      <option value="#008000" style="background-color:#008000;color:#008000">#008000</option>
+      <option value="#2E8B57" style="background-color:#2E8B57;color:#2E8B57">#2E8B57</option>
+      <option value="#FF1493" style="background-color:#FF1493;color:#FF1493">#FF1493</option>
+      <option value="#FF6347" style="background-color:#FF6347;color:#FF6347">#FF6347</option>
+      <option value="#4B0082" style="background-color:#4B0082;color:#4B0082">#4B0082</option>
+      <option value="#A0522D" style="background-color:#A0522D;color:#A0522D">#A0522D</option>
+      <option value="#D2691E" style="background-color:#D2691E;color:#D2691E">#D2691E</option>
+    </select></td>
+				  </tr>
+					
+					
+					<tr>
+					  <td>产品型号
+    <input name="spec" type="text" id="spec" class="txt"/>
+    产品尺寸
+    <input name="size" type="text" id="size" class="txt"/>
+    <font color="#FF0000">产品图片</font>
+    <input name="attachment" type="file" id="attachment" /></td>
+				  </tr>
+					
+
+					<tr>
+					  <td>产品说明
+    <html:editor type="fckeditor" id="content" width="80%" height="300px" name="content"  /></td>
+				  </tr>
+					
+					<tr>
+					  <td>以下为选填内容</td>
+				  </tr>
+					<tr>
+					  <td>其它参数
+                        
+                        <textarea name="meno" cols="50" rows="4" id="meno"></textarea>
+每行一条。如： 重量：50KG</td>
+				  </tr>
+					<tr>
+					  <td>是否推荐：
+					    <input name="istop" type="radio" class="checkbox" id="istop" value="1"/>
+置顶
+<input name="isgood" type="radio" class="checkbox" id="isgood" value="1"/>
+推荐
+<input name="hidden" type="radio" class="checkbox" id="hidden" value="1" checked="checked"/>
+审核 关键字
+<input name="keywords" type="text" id="keywords" class="txt"/>
+浏览
+<input name="hits" type="text" id="hits" value="0" size="5" maxlength="12" class="txt" /></td>
+				  </tr>
+					<tr>
+					  <td>&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td><input type="submit" name="Submit2" value="确定新增" class="inputButton" />
+                        <input type="reset" name="Reset" value="还原重填" class="inputButton" /> </td>
+				  </tr>
+				</form></table>
+<p class="i">产品图片只能上传jpg,gif,png,jpeg</p>
+        <br>
+<include file="Public:footer" />

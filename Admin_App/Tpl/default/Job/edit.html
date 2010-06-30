@@ -1,0 +1,58 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">发布招聘</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋发布招聘</a><a href="__URL__/resume" class="sgbtn">应聘管理</a></h3>
+		
+        
+          <table width="100%"><form method="post" name="form1" action="__URL__/edits">
+          <input type="hidden" name="id" value="{$vo.id}" />
+            <tr>
+              <td>招聘职位
+              <input name="title" type="text" class="txt redtxt" id="title2" value="{$vo.title}" /></td>
+            </tr>
+            <tr>
+              <td>工资待遇
+              <textarea name="money" cols="48" rows="3" id="money">{$vo.money}</textarea></td>
+            </tr>
+            <tr>
+              <td>招聘要求</td>
+            </tr>
+            <tr>
+              <td><html:editor type="fckeditor" id="editor" width="80%" height="300px" name="intro" content="{$vo.intro}" /></td>
+            </tr>
+            <tr>
+              <td>招聘人数
+                <input name="nums" type="text" class="txt redtxt" id="nums" value="{$vo.nums}" size="5" />
+              人</td>
+            </tr>
+            <tr>
+              <td>有效期限
+                <input name="exdate" type="text" class="txt redtxt" id="exdate" value="{$vo.exdate}" size="5" />
+              天</td>
+            </tr>
+            <tr>
+              <td>工作地点
+              <input name="address" type="text" class="txt redtxt" id="address" value="{$vo.address}" /></td>
+            </tr>
+            <tr>
+              <td>
+              电　　话
+              <input name="tel" type="text" class="txt redtxt" id="tel" value="{$vo.tel}" /></td>
+            </tr>
+            
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>
+                <input type="submit" name="Submit2" value="提交更新" class="inputButton" />
+              <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+            </tr>
+         </form> </table>
+<p class="i">红色标记的内容必须填写</p>
+        <br>
+<include file="Public:footer" />

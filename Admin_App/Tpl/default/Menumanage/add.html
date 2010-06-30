@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<tagLib name="html,cx" />	
+<include file="Public:header" />
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery('#module').change(function(){
+		var module=jQuery('#module').attr("selected","selected").val();
+		(module=='3')?jQuery("#moduletype").show():jQuery("#moduletype").hide();
+	});
+});
+</script>
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">添加头部导航菜单</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋导航管理</a></h3>
+        
+          <table width="100%"><form method="post" name="form1" action="__URL__/adds">
+            <tr>
+              <td width="13%">菜单名称</td>
+              <td width="87%">
+                <input name="cname" type="text"  class="txt" id="subject" size="50"/></td>
+            </tr>
+            <tr>
+              <td>选择菜单模型</td>
+              <td> <html:select name="module" id="module" options='moduletype' selected='module' />  </td>
+            </tr>
+			<tr id="moduletype" style="display:none">
+              <td>菜单子列表(输入单页面的ID）</td>
+			  <td>
+				<volist name="pages" id="pages">
+				<input type="checkbox" name="pid[]" value="{$pages.id}" />{$pages.subject}<br />
+				</volist>
+            </tr>
+            <tr>
+              <td>排序 </td>
+              <td>
+                <input name="sortrank" type="text" class="txt" id="sortrank" size="10" /></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>
+                <input type="submit" name="Submit2" value="确定新增" class="inputButton" />
+                <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+            </tr>
+          </form></table>
+        <p class="i">删除不可恢复,谨慎操作</p>
+<br>
+<include file="Public:footer" />

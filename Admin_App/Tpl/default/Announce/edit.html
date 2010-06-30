@@ -1,0 +1,52 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">发布公告</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回公告管理</a></h3>
+		
+       
+          <table width="100%"> <form method="post" name="form1" action="__URL__/edits" >
+          <input type="hidden" name="id" value="{$vo.id}" />
+            <tr>
+              <td colspan="2">标题
+              <input name="title" type="text" class="txt redtxt" id="title" value="{$vo.title}" size="40"  /></td>
+            </tr>
+          
+            <tr>
+              <td colspan="2">内容<html:editor type="fckeditor" id="editor" width="80%" height="300px" name="content"  content="{$vo.content}"/></td>
+            </tr>
+            <tr>
+              <td colspan="2">用户
+                <input name="username" type="text" class="txt" id="username" value="{$vo.username}"  />
+              &nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2">来源
+              <input name="comefrom" type="text" id="comefrom3" value="{$vo.comefrom}" class="txt"/>
+              留空则为“本站”</td>
+            </tr>
+            <tr>
+              <td colspan="2">链接
+                <input name="link" type="text" id="comefrom" value="{$vo.link}" class="txt"/>
+              链接到其它地址，否则留空</td>
+            </tr>
+            <tr>
+              <td colspan="2">浏览
+                <input name="hits" type="text" id="hits3"  value="{$vo.hits}" size="8" maxlength="12" class="txt"/>             </td>
+            </tr>
+            
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="submit" name="Submit2" value="提交更新" class="inputButton" />
+              <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+            </tr>
+          </form></table>
+<p class="i">红色标记的内容必须填写</p>
+        <br>
+<include file="Public:footer" />

@@ -1,0 +1,37 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">数据库管理</div>
+</div>
+<form name="form1" method="post" action="__URL__/optimize">
+				<table class="datalist fixwidth" >
+					<tr>
+						<th><input type="checkbox" onClick="selAll(this)" value="选择全部" class="checkbox">选择</th>
+						<th>表名</th>
+						<th>纪录数</th>
+						<th>大小</th>
+						<th>碎片</th>
+					</tr>  <volist name="list" id="vo" key="key">
+											<tr>
+							<td class="option"><input name="id[]" type="checkbox" class="checkbox" id="id[]" value="{$vo.Name}">{$key}</td>
+							<td>
+							{$vo.Name}</td>
+							<td>{$vo.Rows}</td>
+							<td>{$vo.Data_length|RealSize}</td>
+							<td>{$vo.Data_free|RealSize}</td>
+						</tr>  </volist>
+										<tr class="nobg">
+						<td colspan="6"><input name="action" type="radio" class="checkbox" id="action" value="optimize" checked="checked"/>
+						  数据表优化
+						    <input name="action" type="radio" class="checkbox" id="action2" value="repair" />						  
+					      
+						  数据表修复						  
+						  <input type="submit" value="提交操作" class="inputButton" />						  </td>
+					</tr>
+				</table>
+				</form><p class="i">修复表:修复数据库在进行查询，删除，更新等操作时产生的错误。
+		  <br />
+<b>优化表:</b>数据表优化可以去除数据文件中的碎片，使数据库运行效率提高。</p>
+<include file="Public:footer" />

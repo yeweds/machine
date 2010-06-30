@@ -1,0 +1,47 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">图片管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋增加图片</a></h3>
+      
+				
+
+          <table class="datalist fixwidth" > <form name="form1" method="post" action="__URL__/submit">
+            <tr>
+              <th><input name="checkbox" type="checkbox" class="checkbox" onClick="selAll(this)" value="选择全部">
+                 选择</th>
+
+              <th>网站名称</th>
+              <th>网站地址</th>
+              <th>提交时间</th>
+              <th>操作</th>
+            </tr> <present name="list">
+            <volist name="list" id="vo">
+            <tr>
+              <td class="option"><input name="id[]" type="checkbox" id="id[]" value="{$vo.id}" class="checkbox">
+                {$vo.id}</td>
+              
+              <td>{$vo.subject}</td>
+              <td>{$vo.url}</td>
+              <td>{$vo.postdate|date="Y-m-d",###}</td>
+              <td><a href="__URL__/edit/id/{$vo.id}"><img src="../Public/images/edit.gif" alt="编辑" align="absmiddle" /></a>　<a href="__URL__/submit/act/delete/id/{$vo.id}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></td>
+            </tr>
+            </volist>
+            <eq name="allowbat" value="1"> <tr class="nobg">
+              <td colspan="6"><font color="red">操作类型：</font>
+                <input name="act" type="radio" class="checkbox" value="delete">
+删除 <input type="submit" value="提交操作" class="inputButton" onClick="return confirm('确定提交吗');" /></td>
+            </tr></eq>
+            <tr class="nobg">
+              <td colspan="6" class="tdpage">{$page}</td>
+            </tr><else />
+			  <tr><td colspan="6" align="center">无内容</td>
+			  </tr>
+			</present>
+         </form> </table>
+        
+<p class="i">图片尺为230px*330px </p>
+<br>
+<include file="Public:footer" />

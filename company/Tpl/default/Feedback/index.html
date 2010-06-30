@@ -1,0 +1,142 @@
+<include file="Public:header" />
+<script type="text/javascript">
+function fleshVerify(){
+//重载验证码
+var timenow = new Date().getTime();
+document.getElementById('verifyImg').src= '__URL__/verify/'+timenow;
+}
+</script>
+<div class="main940">
+
+<div class="sub">
+<div class="title"><h2>{$cate_name}</h2></div>
+<ul class="subList">
+<foreach name='left_menu' item="volist">
+<li><a href="__ROOT__/{$volist.link}"><strong>{$volist.subject}</strong></a></li>
+</foreach>
+</ul>
+<div class="subg"></div>
+</div>
+<!-- sub -->
+
+<div class="main">
+<div class="banner"><img src="../Public/images/banner07.jpg" /></div>
+<div class="location"><span>当前位置：</span><a href="__ROOT__">首页</a> > 在线留言</div>
+<div class="title"><h1>在线留言</h1></div>
+<div class="mainList">
+<div class="contact">
+　　<div class=syCss_2008623159055 style="TEXT-ALIGN: center">
+	  <table class=Board_Tab cellspacing=0 cellpadding=0 
+width="100%" border=0>
+		<tbody>
+		  <volist name="list" id="vo">
+			<tr>
+			  <td style="BORDER-BOTTOM: #cccccc 1px solid" 
+align=right>{$vo.username}在：{$vo.postdate|date="Y-m-d H:i:s",###}发表此留言　类型：
+				  <switch name='vo.type'>
+					<case value='advice'>建议</case>
+					<case value='complain'>投诉</case>
+					<case value='praise'>合作交流</case>
+					<case value='question'>售后反馈</case>
+					<case value='gbook'>网站留言</case>
+					<case value='order'>产品订购</case>
+					<default/>
+					其它 </switch></td>
+			</tr>
+			<tr>
+			  <td bgcolor="#F6F6F6" style="LINE-HEIGHT: 150%"><font 
+face=Verdana>{$vo.content|htmlspecialchars|nl2br}</font></td>
+			</tr>
+			<neq name="vo['reply']" value="">
+			  <tr>
+				<td style="LINE-HEIGHT: 150%"><font color=red>管理回复：</font><br>
+				  {$vo.reply|htmlspecialchars|nl2br}</td>
+			  </tr>
+			</neq>
+		  </volist>
+		</tbody>
+	  </table>
+	</div>　
+　
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">{$page}</td>
+  </tr>
+</table>
+
+                          <form method="post" name="form1" action="__URL__/writes">
+
+				
+				<table width="100%">
+					<tr>
+					  <td>留言类型</td>
+					  <td> 
+ <input name="type" type="radio" value="gbook" checked="checked"  class="checkbox" />
+网站留言
+<input name="type" type="radio" class="checkbox" value="advice" />
+建议
+<input name="type" type="radio" value="complain"  class="checkbox" />
+投诉
+<input name="type" type="radio" value="praise"  class="checkbox" />
+合作交流
+<input type="radio" name="type" value="question"  class="checkbox" />
+售后反馈
+<input name="type" type="radio" value="order"  class="checkbox" />
+产品订购 </td>
+				  </tr>
+					<tr>
+					  <td>姓　　名</td>
+					  <td>  <input name="username" type="text" id="username"  class="txt"/>
+&nbsp;&nbsp;              &nbsp;性　　别:
+<input name="sex" type="radio" value="1" checked="checked" class="checkbox"/>
+男
+<input type="radio" name="sex" value="0" class="checkbox"/>
+女</td>
+				  </tr>
+					<tr>
+					  <td>留言内容</td>
+					  <td> <textarea name="content" cols="48" rows="5" class="textarea" id="content"></textarea></td>
+				  </tr>
+					<tr>
+					  <td>联系方式</td>
+					  <td></td>
+				  </tr>
+					<tr>
+					  <td>联系电话</td>
+					  <td> <input name="tel" type="text" id="tel" class="txt"/>
+					    传　　真:
+<input name="fax" type="text" id="fax" class="txt"/></td>
+				  </tr>
+					
+					<tr>
+					  <td>Ｑ　　Ｑ</td>
+					  <td>
+      <input name="qq" type="text" id="qq" class="txt"/>
+电子邮件:
+<input name="email" type="text" id="email" class="txt"/></td>
+				  </tr>
+					<tr>
+					  <td>个人主页</td>
+					  <td><input name="web" type="text" id="web" class="txt"/>
+					    <input name="ip" type="hidden" id="ip" value="<?php echo get_client_ip(); ?>">
+					    验 证 码:
+					    <input type="text" name="seccode" id="seccode" size="11"  /> <A HREF="javascript:fleshVerify()"><IMG SRC="__URL__/verify/" name="verifyImg" BORDER="0" align="absmiddle" id="verifyImg" title="如果您无法识别验证码，请点图片更换"></a></td>
+				  </tr>
+					<tr>
+					  <td>&nbsp;</td>
+					  <td> <input type="submit" name="Submit2" value="提交留言" class="button" />
+      <input type="reset" name="Reset" value="清空重填" class="button" /></td>
+				  </tr>
+				</table>
+				</form></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+</div>
+</div>
+
+</div>
+<!-- main -->
+</div>
+
+<include file="Public:footer" />

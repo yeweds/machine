@@ -1,0 +1,96 @@
+<include file="Public:index_header" />
+<div class="content">
+<div class="banner"><img src="../Public/images/banner.jpg" /></div>
+
+<div class="channel">
+<ul>
+	<li id="sa1" style="cursor:pointer" class="on" onclick="tabSwitch(1,'sa',5);">关于我们</li>
+	<li id="sa2" style="cursor:pointer" onclick="tabSwitch(2,'sa',5);">新闻动态</li>
+    <li id="sa3" style="cursor:pointer" onclick="tabSwitch(3,'sa',5);">服务项目</li>
+    <li id="sa4" style="cursor:pointer" onclick="tabSwitch(4,'sa',5);">成功案例</li>
+    <li id="sa5" style="cursor:pointer" onclick="tabSwitch(5,'sa',5);">技术支持</li>
+</ul>
+</div>
+
+<div class="channelList">
+<div id="sact1">
+
+<div class="company fl">
+	<h3>{$intro.subject}</h3>
+	<p>{$intro.message|msubstr=0,144,'utf-8',true}<a href="__ROOT__/Pages/{$intro.id}.html">查看详细>></a></p>
+</div>
+
+<div class="company fl">
+	<h3>{$intro2.subject}</h3>
+	<p>{$intro2.message|msubstr=0,144,'utf-8',true}<a
+	href="__ROOT__/Pages/{$intro2.id}.html">查看详细>></a></p>
+</div>
+
+</div>
+
+<div id="sact2" style="display:none">
+
+<div class="news fl">
+<h3>公司动态</h3>
+<ul>
+ <volist name="company_news" id="company_news" offset="0" length='4'>
+<li><a href="__ROOT__/Article/{$company_news.id}.html"
+	target="_blank">{$company_news.subject}</a></li>
+</volist>
+</ul>
+</div>
+
+<div class="news fl">
+<h3>行业动态</h3>
+<ul>
+ <volist name="business_news" id="business_news" offset="0" length='4'>
+<li><a href="__APP__/Article/{$business_news.id}.html"
+	target="_blank">{$business_news.subject}</a></li>
+</volist>
+</ul>
+</div>
+
+</div>
+
+<div id="sact3" style="display:none">
+<div class="service">
+<a class="link01" href="javascript:void(0)">支撑软件</a>
+<a class="link02" href="javascript:void(0)">商业智能（BI）</a>
+<a class="link03" href="javascript:void(0)">增值业务</a>
+<a class="link04" href="javascript:void(0)">软件外包</a>
+<a class="link05" href="javascript:void(0)">数据库营销</a>
+<a class="link06" href="javascript:void(0)">咨询服务</a>
+</div>
+</div>
+
+<div id="sact4" style="display:none">
+<div class="case">
+<ul>
+<volist name="intro4" id="xm">
+<li><a href="__ROOT__/Product/{$xm.id}.html"><img src="__ROOT__/attachments/product/{$xm.attachpath}/{$xm.attachthumb}" width="200" height="110" border="0" />{$xm.subject}</a></li>
+</volist>
+</ul>
+</div>
+</div>
+
+<div id="sact5" style="display:none">
+<div class="company fl">
+	<h3>{$intro5.subject}</h3>
+	<p>{$intro5.message|msubstr=0,144,'utf-8',true}</p>
+</div>
+<div class="news fl">
+	<h3>{$intro6.subject}</h3>
+	<p>{$intro6.message|msubstr=0,144,'utf-8',true}</p>
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+<script type="text/javascript">
+
+//tabSwitch(1,"sa",5);
+</script>
+<include file="Public:index_foot" />

@@ -1,0 +1,60 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">评论管理</div>
+</div>
+<br>
+
+
+				
+				<table class="fixwidth"><form method="POST" name="form1" action="__URL__/comment">
+					<tr>
+						<td>新闻标题:
+					    <input name="keyword" type="text" class="txt" id="keyword" />					    <input type="submit" value="搜索" class="inputButton" /></td>
+				  </tr>
+				</form></table>
+
+      
+          <table class="datalist fixwidth" >  <form name="form1" method="post" action="__URL__/commentsubmit">
+            <tr>
+              <th><input name="checkbox" type="checkbox" class="checkbox"  onClick="selAll(this)" value="选择全部">
+                  选择</th>
+              <th>新闻标题</th>
+              <th>浏览</th>
+              <th>类别名称</th>
+              <th>评论人</th>
+               <th>状态</th>
+               <th>IP</th>
+              <th>评论时间</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+              <td class="option"><input name="id[]" type="checkbox" id="id[]" value="{$vo.commentid}" class="checkbox">
+                {$vo.commentid}</td>
+              <td><strong>{$vo.subject} </strong></td>
+               <td>{$vo.hits}</td><td>{$vo.title}</td>
+               <td>{$vo.commentuser}</td>
+               <td><if condition="$vo['commentischecked'] eq 1">审核<else />未审核</if> </td>
+              <td>{$vo.ip}</td>
+              <td>{$vo.commentpostdate|date="Y-m-d",###}</td>
+              </tr>
+            </volist>
+            <tr  class="nobg">
+              <td colspan="8"><font color="red">操作类型：</font>
+                <input name="act" type="radio"  class="checkbox" value="uischecked" checked="checked"/>
+审核
+<input name="act" type="radio" value="ischecked"  class="checkbox"/>
+取消审核
+<input name="act" type="radio" value="delete" class="checkbox"/>
+              删除
+              <input name="submit" type="submit" class="inputButton" onclick="return confirm('确定提交吗');" value="提交操作"/></td>
+            </tr>
+            <tr class="nobg">
+              <td colspan="8" align="right">{$page}</td>
+            </tr>
+         </form> </table>
+<p class="i">删除不可恢复,谨慎操作</p>
+        <br>
+<include file="Public:footer" />

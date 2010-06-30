@@ -1,0 +1,82 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">新闻管理</div>
+</div>
+<br><h3 class="marginbot"><form method="GET" name="form1" action="__URL__/add"><select name="catelist" id="catelist">
+ <volist name="cate" id="vo"><option value="{$vo.id}">{$vo.title}</option></volist>
+</select><input name="submit" type="submit" class="inputButton"  value="添加新闻"/></form></h3>
+	
+			
+				<table class="fixwidth">	<form method="POST" name="form1" action="__URL__">
+					<tr>
+						<td>新闻标题:
+						  <input name="keyword" type="text" class="txt" id="keyword" />
+						或用户ID
+					    <input name="uid" type="text" class="txt" id="uid" size="5" />
+					    <input type="submit" value="搜索" class="inputButton" /></td>
+				  </tr>
+				</form></table>
+
+       
+          <table class="datalist fixwidth" > <form name="form1" method="post" action="__URL__/submit">
+            <tr>
+              <th><input name="checkbox" type="checkbox" class="checkbox"  onClick="selAll(this)" value="选择全部">
+                  选择</th>
+              <th>新闻标题</th>
+              <th>浏览</th>
+              <th>类别名称</th>
+              <th>用户</th>
+              <th>提交时间</th>
+              <th>操作</th>
+            </tr><present name="list">
+            <volist name="list" id="vo">
+            <tr><!-- -->
+              <td class="option"><input name="id[]" type="checkbox" id="id[]" value="{$vo.id}" class="checkbox">
+                {$vo.id}</td>
+              <td><strong><if condition="$vo['color'] neq ''"><font color="{$vo.color}">{$vo.subject}</font><else /> {$vo.subject}</if></strong> <neq name="vo['attachthumb']" value=""><img src="../Public/images/img.gif" alt="图片" align="absmiddle" /></neq> 
+              <eq name="vo['istop']" value="1"><img src="../Public/images/d.gif" alt="置顶" align="absmiddle" /></eq>  <eq name="vo['isgood']" value="1"><img src="../Public/images/j.gif" alt="推荐" align="absmiddle" /></eq> <eq name="vo['ischecked']" value="0"><font color="#cccccc">未审核</font></eq></td>
+               <td>{$vo.hits}</td><td>{$vo.title}</td>
+              
+              <td><a href="__URL__/index/uid/{$vo.uid}">{$vo.username}</a></td>
+              <td>{$vo.postdate|date="Y-m-d",###}</td>
+              <td><a href="__URL__/edit/id/{$vo.id}"><img src="../Public/images/edit.gif" alt="编辑" align="absmiddle" /></a>　　<a href="__URL__/submit/act/delete/id/{$vo.id}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></td>
+            </tr>
+            </volist>
+           <eq name="allowbat" value="1"> <tr  class="nobg">
+             <td colspan="7"><font color="red">操作类型：</font>
+                <input name="act" type="radio"  class="checkbox" value="uischecked" checked="checked"/>
+审核
+<input name="act" type="radio" value="ischecked"  class="checkbox"/>
+取消审核
+<!--input name="act" type="radio" value="top"  class="checkbox"/>
+                置顶
+                 <input name="act" type="radio" value="utop"  class="checkbox"/>
+                取消置顶
+                <input name="act" type="radio" value="good"  class="checkbox"/>
+                推荐
+                <input name="act" type="radio" value="ugood"  class="checkbox"/>
+                取消推荐-->
+                <input name="act" type="radio" value="delete" class="checkbox"/>
+删除
+                <input name="act" type="radio" value="remove"  class="checkbox"/>
+移动
+
+<select name="category" id="category">
+ <volist name="cate" id="vo"><option value="{$vo.id}">{$vo.title}</option></volist>
+</select>
+
+              <input name="submit" type="submit" class="inputButton" onclick="return confirm('确定提交吗');" value="提交操作"/></td>
+            </tr></eq>
+            <tr class="nobg">
+              <td colspan="7" class="tdpage">{$page}</td><!-- -->
+            </tr><else />
+			  <tr><td colspan="7" align="center">无内容</td>
+			  </tr>
+			</present>
+         </form> </table>
+<p class="i">删除不可恢复,谨慎操作 </p>
+
+<include file="Public:footer" />

@@ -1,0 +1,52 @@
+<include file="Public:header" />
+
+<div class="main940">
+
+<div class="sub">
+<div class="title"><h2> 成功案例</h2></div>
+<ul class="subList">
+ <volist name="cate" id="cate">
+<li><a href="__ROOT__/Product/index/id/{$cate.id}.html"><strong>{$cate.title}</strong></a></li>
+</volist>
+</ul>
+<div class="subg"></div>
+</div>
+<!-- sub -->
+
+<div class="main">
+<div class="banner"><img src="../Public/images/banner04.jpg" /></div>
+<div class="location"><span>当前位置：</span><a href="">首页</a> > 成功案例</div>
+<div class="title"><h1>成功案例</h1></div>
+
+<div class="mainList">
+<div class="anli">
+<ul>
+<php>
+if ($count>0){
+	foreach ($Product as $pro){
+</php>
+<li><a href="__ROOT__/Product/{$pro.id}.html" target="_blank" title="{$pro.subject}" >
+	<if condition="$pro['attachment'] neq ''">
+	<img src="__ROOT__/attachments/product/{$pro.attachpath}/{$pro.attachthumb}" alt="{$pro.subject}" width="200" height="110" border="0" />
+	<else />
+	<img src="../Public/images/nopic.jpg" width="200" height="110" border="0" />
+	</if>
+	{$pro.subject|msubstr=0,10}
+	</a></li>
+<php>
+	}
+}else{
+	echo "<li>此类无产品</li>";
+}
+</php>
+</ul>
+</div>
+<div id="page-info">{$page}</div>
+</div>
+
+</div>
+<!-- main -->
+
+</div>
+
+<include file="Public:footer" />

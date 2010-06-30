@@ -1,0 +1,138 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">用户组编辑</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋添加用户组</a><a href="__APP__/Member/add" class="sgbtn">＋添加用户</a><a href="__URL__" class="sgbtn">＋返回用户组</a></h3>
+		<p class="i">红色标记的内容必须填写<br />
+          <font color="#FF0000">允许批量操作：此用户组将有权限进行批量删除和移动内容的权限，即：用户可以操作原本没有发布/删除权限的栏目。若对权限要求比较严格只允许最小权限请不要选择</font></p>
+
+          <table width="100%"><form action="__URL__/edits" method="post" name="form1" id="form1">
+            <tr>
+              <td>GROUPID</td>
+              <td>{$vo.id}</td>
+            </tr>
+            <tr>
+              <td width="13%">用户组名称</td>
+              <td width="87%"><input name="grouptitle" type="text"  class="txt redtxt" id="grouptitle" value="{$vo.grouptitle}"/></td>
+            </tr>
+
+            <tr>
+              <td>系统配置 </td>
+              <td>
+            
+              <input name="allowsystem" type="radio" class="radio" id="radio" value="1" <eq name="vo['allowsystem']" value="1">checked=checked</eq>/>
+                允许
+                <input type="radio" name="allowsystem" id="radio2" value="0" class="radio" <eq name="vo['allowsystem']" value="0">checked=checked</eq>/>
+                  不允许                </td>
+            </tr>
+            <tr>
+              <td>数据库管理</td>
+              <td><input name="allowdatabase" type="radio" class="radio" id="radio" value="1" <eq name="vo['allowdatabase']" value="1">checked=checked</eq>/>
+                允许
+                <input type="radio" name="allowdatabase" id="radio2" value="0" class="radio" <eq name="vo['allowdatabase']" value="0">checked=checked</eq>/>
+                  不允许                </td>
+            </tr>
+            <tr>
+              <td><font color="#FF0000">批量操作</font></td>
+              <td><input type="radio" name="allowbat" id="radio" value="1" class="radio" <eq name="vo['allowbat']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowbat" id="radio2" value="0" class="radio" <eq name="vo['allowbat']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+            <tr>
+              <td>类别模块<br />
+(文章/产品)</td>
+              <td><input type="radio" name="allowcategory" id="radio" value="1" class="radio" <eq name="vo['allowcategory']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowcategory" id="radio2" value="0" class="radio" <eq name="vo['allowcategory']" value="0">checked=checked</eq>/>
+                  不允许(文章和产品模块权限优先级高于类别模块，即：用户有文章或产品管理权限才能进入相应的类别管理)</td>
+            </tr>
+            <tr>
+		    <tr>
+              <td>新闻模块</td>
+              <td><input type="radio" name="allowarticle" id="radio" value="1" class="radio" <eq name="vo['allowarticle']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowarticle" id="radio2" value="0" class="radio" <eq name="vo['allowarticle']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+            <tr>
+              <td>产品模块</td>
+              <td><input type="radio" name="allowproduct" id="radio" value="1" class="radio" <eq name="vo['allowproduct']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowproduct" id="radio2" value="0" class="radio" <eq name="vo['allowproduct']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+
+            <tr>
+              <td>招聘模块</td>
+              <td><input type="radio" name="allowjob" id="radio" value="1" class="radio" <eq name="vo['allowjob']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowjob" id="radio2" value="0" class="radio" <eq name="vo['allowjob']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+            <tr>
+              <td>留言模块</td>
+              <td><input type="radio" name="allowfeedback" id="radio" value="1" class="radio" <eq name="vo['allowfeedback']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowfeedback" id="radio2" value="0" class="radio" <eq name="vo['allowfeedback']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+            <tr>
+              <td>公告模块</td>
+              <td><input type="radio" name="allowannounce" id="radio" value="1" class="radio" <eq name="vo['allowannounce']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowannounce" id="radio2" value="0" class="radio" <eq name="vo['allowannounce']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+            <tr>
+              <td>单页管理</td>
+              <td><input type="radio" name="allowpages" id="radio" value="1" class="radio" <eq name="vo['allowpages']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowpages" id="radio2" value="0" class="radio" <eq name="vo['allowpages']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+			
+			 <tr>
+              <td>幻灯图片</td>
+              <td><input type="radio" name="allowscroll" id="radio" value="1" class="radio" <eq name="vo['allowscroll']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowscroll" id="radio2" value="0" class="radio" <eq name="vo['allowscroll']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+			
+			
+            <tr>
+              <td>用户模块</td>
+              <td><input type="radio" name="allowmember" id="radio" value="1" class="radio" <eq name="vo['allowmember']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowmember" id="radio2" value="0" class="radio" <eq name="vo['allowmember']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+            <tr>
+              <td>用户组管理</td>
+              <td><input type="radio" name="allowgroup" id="radio" value="1" class="radio" <eq name="vo['allowgroup']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowgroup" id="radio2" value="0" class="radio" <eq name="vo['allowgroup']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+            <tr>
+              <td>链接管理</td>
+              <td><input type="radio" name="allowlink" id="radio" value="1" class="radio" <eq name="vo['allowlink']" value="1">checked=checked</eq>/>
+                允许
+                  <input type="radio" name="allowlink" id="radio2" value="0" class="radio" <eq name="vo['allowlink']" value="0">checked=checked</eq>/>
+                  不允许</td>
+            </tr>
+           
+            <tr>
+              <td>&nbsp;</td>
+              <td><input type="submit" name="Submit2" value="提交更新" class="inputButton" />
+                  <input type="reset" name="Reset" value="还原重填" class="inputButton" />
+              <input name="id" type="hidden" id="id" value="{$vo.id}" /></td>
+            </tr>
+         </form> </table>
+
+        <br>
+<include file="Public:footer" />

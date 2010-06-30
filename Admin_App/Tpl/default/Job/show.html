@@ -1,0 +1,54 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">招聘管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋发布招聘</a><a href="__URL__/resume" class="sgbtn">应聘管理</a></h3>
+		
+        <table class="opt">
+          <tr>
+            <td>
+              <input name="sitename" type="text" class="txt" id="sitename" value="{$j.title}" size="40" />
+      应聘职位</td>
+          </tr>
+          <tr>
+            <td><input name="siteurl" type="text" class="txt" id="siteurl2" value="{$vo.username}" size="40" />
+      用 户 名</td>
+          </tr>
+          <tr>
+            <td><input name="authkey" type="text" class="txt" id="authkey2" value="{$vo.school}" />毕业学校</td>
+          </tr>
+          <tr>
+            <td><input type="text" class="txt" name="dateformat" value="{$vo.degree}" />
+      学历</td>
+          </tr>
+          <tr>
+            <td><input type="text" class="txt" name="dateformat2" value="{$vo.zhuanye}" />
+      专业</td>
+          </tr>
+          <tr>
+            <td><input name="attachdir" type="text" class="txt" id="attachdir2" value="{$vo.gradyear}" />
+      毕业时间</td>
+          </tr>
+          <tr>
+            <td><input name="email" type="text" class="txt" id="email2" value="{$vo.email}" />
+      邮箱</td>
+          </tr>
+          <tr>
+            <td><input name="telephone" type="text" class="txt" id="telephone2" value="{$vo.tel}" />
+      电　　话</td>
+          </tr>
+          <tr>
+            <td><input name="fax" type="text" class="txt" id="fax2" value="{$vo.address}" />
+      所在地</td>
+          </tr>
+          <tr>
+            <th>描述</th>
+          </tr>
+          <tr>
+            <td><textarea name="seodescription" class="area"  id="seodescription">{$vo.rusumes}</textarea></td>
+          </tr>
+        </table><p class="i">!</p>
+        <br>
+<include file="Public:footer" />

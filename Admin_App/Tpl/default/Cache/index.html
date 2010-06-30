@@ -1,0 +1,29 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">缓存管理</div>
+</div>
+<p class="i">修改模和内核设置后需要重新系统缓存</p>
+<input name="checkbox" type="checkbox" class="checkbox" id="uid[]" onClick="selAll(this)" value="选择全部">选择全部 <form method="POST" name="form1" action="__URL__/submit">
+<table class="datalist fixwidth" >
+            <volist id="sub" name="cache">
+            <tr>
+              <td class="option">{$key}          </td>
+              </tr>
+           
+            <tr class="nobg">
+              <td colspan="6"><sublist id="dir" name="sub">
+<input type="checkbox" name="id[]" value="{$dir}" class="checkbox"> {$key}<br>
+
+</sublist></td>
+            </tr> </volist>
+            <tr class="nobg">
+              <td colspan="6"><br />
+<input type="submit" name="Submit2" value="提交更新" class="inputButton" /></td>
+            </tr>
+            
+          </table>
+</form>
+<include file="Public:footer" />

@@ -1,0 +1,46 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">应聘管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋发布招聘</a></h3>
+		
+       
+          <table class="datalist fixwidth" > <form name="form1" method="post" action="__URL__/resumedel">
+            <tr>
+              <th><input name="checkbox" type="checkbox" class="checkbox" onClick="selAll(this)" value="选择全部">
+                  选择</th>
+              <th>用 户 名</th>
+              <th>电　　话</th>
+              <th>年龄</th>
+              <th>学历</th>
+              <th>专业</th>
+              <th>提交时间</th>
+              <th>操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+              <td class="option"><input name="id[]" type="checkbox" id="id[]" value="{$vo.id}" class="checkbox">
+                {$vo.id}</td>
+              <td><strong>{$vo.username}</strong></td>
+              <td>{$vo.tel}</td>
+              <td>{$vo.age}</td>
+              <td>{$vo.degree}</td>
+              <td>{$vo.zhuanye}</td>
+              <td>{$vo.postdate|date="Y-m-d",###}</td>
+              <td><a href="__URL__/show/id/{$vo.id}"><img src="../Public/images/search.gif" alt="详细" align="absmiddle" /></a>　　<a href="__URL__/resumedel/act/delete/id/{$vo.id}"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></td>
+            </tr>
+            </volist>
+            <eq name="allowbat" value="1"> <tr class="nobg">
+              <td colspan="8"><font color="red">操作类型：</font><input name="act" type="radio" class="checkbox" value="delete" checked >
+										    删除 
+									          <input type="submit" value="提交操作" class="inputButton" onClick="return confirm('确定提交吗');" /></td>
+            </tr></eq>
+            <tr class="nobg">
+              <td colspan="8" class="tdpage">{$page}</td>
+            </tr>
+         </form> </table>
+<p class="i">!</p>
+        <br>
+<include file="Public:footer" />

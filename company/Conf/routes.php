@@ -1,0 +1,19 @@
+<?php
+Return array(
+	'Article@'=>array(
+		array('/^\/(\d+)(\/p\/\d)?$/','Article','read','id'),
+		),
+	'Product@'=>array(
+		array('/^\/(\d+)(\/p\/\d)?$/','Product','read','id'),
+		),
+	'Pages@'=>array(
+		array('/^\/(\d+)(\/p\/\d)?$/','Pages','read','id'),
+		),
+	'Job@'=>array(
+		array('/^\/(\d+)(\/p\/\d)?$/','Job','read','id'),
+		),
+	'Announce@'=>array(
+		array('/^\/(\d+)(\/p\/\d)?$/','Announce','read','id'),
+		),				
+);
+?>

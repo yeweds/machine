@@ -1,0 +1,54 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">链接管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋增加链接</a></h3>
+      
+				<table class="fixwidth"> <form method="post" name="form1" action="__URL__">
+					<tr>
+						<td>网站名称:
+					    <input name="keyword" type="text" class="txt" id="keyword" value="{$keyword}" />					    <input type="submit" value="搜索" class="inputButton" /></td>
+					</tr>
+				</form></table>
+
+          <table class="datalist fixwidth" > <form name="form1" method="post" action="__URL__/submit">
+            <tr>
+              <th><input name="checkbox" type="checkbox" class="checkbox" onClick="selAll(this)" value="选择全部">
+                 选择</th>
+
+              <th>网站名称</th>
+              <th>网站地址</th>
+               <th>链接类型</th>
+              <th>提交时间</th>
+              <th>操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+              <td class="option"><input name="id[]" type="checkbox" id="id[]" value="{$vo.id}" class="checkbox">
+                {$vo.id}</td>
+              
+              <td>{$vo.title} <neq name="vo['logo']" value=""><img src="../Public/images/img.gif" alt="LOGO链接" align="absmiddle" /></neq><eq name="vo['ischecked']" value="0">(<font color=red>隐藏</font>)</eq></td>
+              <td>{$vo.url}</td>
+               <td><if condition="$vo['types'] eq 1">普通链接<else /><font color="#FF0000">合作伙伴</font></if></td>
+              <td>{$vo.postdate|date="Y-m-d",###}</td>
+              <td><a href="__URL__/edit/id/{$vo.id}"><img src="../Public/images/edit.gif" alt="编辑" align="absmiddle" /></a>　<a href="__URL__/submit/act/delete/id/{$vo.id}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></td>
+            </tr>
+            </volist>
+            <eq name="allowbat" value="1"> <tr class="nobg">
+              <td colspan="7"><font color="red">操作类型：</font><input name="act" type="radio"  class="checkbox" value="uischecked" checked="checked"/>
+显示
+  <input name="act" type="radio" value="ischecked"  class="checkbox"/>
+隐藏
+<input name="act" type="radio" class="checkbox" value="delete">
+删除 <input type="submit" value="提交操作" class="inputButton" onClick="return confirm('确定提交吗');" /></td>
+            </tr></eq>
+            <tr class="nobg">
+              <td colspan="7" class="tdpage">{$page}</td>
+            </tr>
+         </form> </table>
+        
+<p class="i">链接LOGO尺为88px*31px (<font color=red>隐藏</font>表示该链接当前状态为隐藏，前台不显示)</p>
+<br>
+<include file="Public:footer" />

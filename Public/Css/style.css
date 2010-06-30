@@ -1,0 +1,70 @@
+
+body{font-family:"宋体", Arial, Helvetica, sans-serif;font-size:12px;color:#666666;line-height:180%;padding:0;margin:0; text-align:center}
+ul,ol,p,span,dd,dt,h1,h2,h3,h4,h5,h6{ margin:0px; padding:0px;}
+ul{list-style:none}
+a{color:#666;text-decoration:none;}
+a:hover{text-decoration:underline;color:#ff6600}
+img{border:none}
+.clear{clear:both}
+.fl{float:left; display:inline}
+
+
+.main960{width:960px;margin:0 auto}
+.top{background:url(../images/topbg.jpg); height:71px; border-bottom:solid 3px #2d5d9b;overflow:hidden;zoom:1}
+.top .logo{background:url(../images/logo.jpg); width:161px; height:71px;float:left}
+.top .nav{float:right;margin:40px 0 0 0;overflow: hidden;zoom:1}
+.top .nav a{color:#344654;padding:0 5px;font-size:14px;font-weight:bold;float:left; display:inline;margin:0 0 0 10px; height:31px}
+.top .nav a:hover{background:url(../images/icon.gif) no-repeat center bottom; text-decoration:none}
+
+.content{background:url(../images/bg.png);width:960px;height:518px;margin:5px auto 0}
+.content .banner{padding-top:9px}
+.content .channel{background:url(../images/navbg.png);width:876px;height:32px;margin:13px auto 0;}
+.content .channel ul{overflow:hidden;zoom:1;margin-left:100px}
+.content .channel li{float:left;color:#555555;font-weight:bold;margin:4px 10px 0 0;line-height:27px; background:url(../images/channelline.png) no-repeat right center;padding:0 20px 0 10px}
+.content .channel li.on{ background:url(../images/channel.png) no-repeat;width:77px;height:27px;color:#000;font-weight:bold;padding:0}
+
+.channelList{width:860px;margin:0 auto; text-align:left}
+.channelList div{overflow:hidden;zoom:1}
+.company{width:350px;margin:20px 30px 0 30px}
+.company h3{color:#000;line-height:30px}
+.company p{line-height:25px;font-size:12px;text-indent:2em}
+.company a{color:#2d5d9b}
+.company a:hover{color:#ff6600}
+.news{width:350px;margin:20px 30px 0 30px}
+.news h3{color:#000;line-height:30px}
+.news li{background:url(../images/icon01.gif) no-repeat 0 10px;line-height:25px;padding:0 0 0 10px}
+
+.main940{width:940px;border:solid 1px #d9d9d9;margin:0 auto;overflow:hidden;zoom:1;border-top:none}
+
+.sub{float:left;width:230px;}
+.sub .title{background:url(../images/listbg.png);width:230px;height:75px;text-align:left;padding-top:35px}
+.sub .title h2{background:url(../images/icon01.png) no-repeat;color:#0b6089;font-family:"黑体";font-weight:100;line-height:33px;padding:0 0 0 40px;margin:0 0 0 35px;font-size:24px}
+.subList li a{background:url(../images/listbg01.png);width:230px;height:37px;text-align:right;line-height:37px; display:block}
+.subList li a strong{font-size:14px;margin-right:15px;}
+.subList li a:hover{display:block;background:url(../images/listbg02.png); text-decoration:none;color:#4e7fa7}
+.subList .blue a{color:#4e7fa7;background:url(../images/listbg02.png);}
+.subg{background:url(../images/subbg.png);width:230px;height:113px}
+
+.main{width:710px;float:left;}
+.main .location{text-align:right; border-bottom:solid 1px #e3e3e3;line-height:23px;padding:0 10px 0 0}
+.main .location span{background:url(../images/icon01.gif) no-repeat 0 4px;padding:0 0 0 8px}
+.main .title{ background:url(../images/maintitle.png);width:690px;height:30px;margin:10px auto 0;text-align:left; line-height:30px}
+.main .title h1{ font-size:14px;color:#fff;margin:0 0 0 29px}
+
+.mainList{width:690px;margin:0 auto; text-align:left}
+.mainList ul{margin-top:5px;margin-bottom:10px}
+.mainList li{background:url(../images/icon02.gif) no-repeat 10px 11px;text-align:right; overflow:hidden;zoom:1;line-height:30px;border-bottom:dotted 1px #ccc;padding:0 20px;color:#999}
+.mainList li a{font-size:14px;color:#444;float:left;}
+.mainList li a:hover{color:#ff6600}
+
+.foot{border:solid 1px #d8d8d8;width:940px;margin:0 auto;border-top:none}
+.footNav {overflow:hidden;zoom:1;background:#f5f5f5; border-bottom:solid 1px #d9d9d9}
+.footNav a{float:left; background:url(../images/footnav.png); width:110px; height:28px; line-height:28px;}
+.footNav a:hover{background:#fff}
+.footbm{height:100px; background:#f5f5f5; overflow:hidden;zoom:1}
+.footLogo{background:url(../images/footlogo.png);width:188px;height:74px;margin:20px 0 0 10px;float:left}
+.footbm .info{float:right; font-family:Arial, Helvetica, sans-serif;margin:20px 20px 0 0}
+
+.pages{ text-align:right;padding:0 10px 10px;}
+.pages a{padding:2px 5px; border:solid 1px #d9d9d9}
+.pages .current{padding:2px 5px; border:solid 1px #d9d9d9; background:#7eabd8;color:#fff}

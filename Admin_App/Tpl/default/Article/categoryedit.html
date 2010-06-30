@@ -1,0 +1,71 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">编辑分类</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/categoryadd" class="sgbtn">＋添加分类</a><a href="__URL__/" class="sgbtn">＋新闻管理</a></h3>
+		
+       
+				
+				<table width="100%"> <form method="post" name="form1" action="__URL__/categoryedits">
+<input name="id" type="hidden" id="id" value="{$list.id}" />
+					<tr>
+					  <td width="11%">类别名称</td>
+					  <td width="89%">  <input name="title" type="text" class="txt redtxt" id="title" value="{$list.title}" size="40"  /></td>
+				  </tr>
+					
+					<tr>
+					  <td>描述</td>
+					  <td> <textarea name="description" cols="48" rows="5"  id="description">{$list.description}</textarea></td>
+				  </tr>
+					<tr>
+					  <td>状　　态</td>
+					  <td><input name="status" type="radio" value="1" checked="checked" class="checkbox"/>
+				      开启
+				        <input type="radio" name="status" value="0" class="checkbox"/>
+			          关闭</td>
+				  </tr><tr>
+                      <td>关键字</td>
+                  <td>
+                        <input name="keywords" type="text" class="txt" id="keywords" value="{$list.keywords}" />
+&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td>排序</td>
+					  <td><input name="displayorder" type="text" class="txt" id="displayorder" value="{$list.displayorder}"  /></td>
+				  </tr>
+					<tr>
+              <td>添加内容</td>
+     <td>
+                   <volist name="group" id="vo">
+ 
+                <input name="allowadd[]" type="checkbox" value="{$vo.id}" id="allowadd[]"  class="checkbox" <?php if (in_array($vo['id'],explode(",",$list['allowadd']))) { ?> checked="checked" <?php } ?>/> 
+                  {$vo.grouptitle}                </volist></td>
+            </tr>
+                  <tr>
+              <td>编辑内容</td>
+           <td>
+                   <volist name="group" id="vo">
+ 
+                <input name="allowedit[]" type="checkbox" value="{$vo.id}" id="allowedit[]"  class="checkbox" <?php if (in_array($vo['id'],explode(",",$list['allowedit']))) { ?> checked="checked" <?php } ?>/> 
+                  {$vo.grouptitle}                </volist></td>
+            </tr><tr>
+              <td>删除内容</td>
+           <td>
+                   <volist name="group" id="vo">
+ 
+                <input name="allowdel[]" type="checkbox" value="{$vo.id}" id="allowdel[]"  class="checkbox" <?php if (in_array($vo['id'],explode(",",$list['allowdel']))) { ?> checked="checked" <?php } ?>/> 
+              {$vo.grouptitle}                </volist></td>
+            </tr>
+					<tr>
+					  <td>&nbsp;</td>
+					  <td> <input type="submit" name="Submit2" value="提交更新" class="inputButton" />
+      <input type="reset" name="Reset" value="清空重填" class="inputButton" /></td>
+					</tr>
+				</form></table>
+<p class="i">红色标记的内容必须填写,<br />
+ 权限如果不想设置，请留空不选择</p>
+        <br>
+<include file="Public:footer" />

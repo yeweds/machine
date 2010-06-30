@@ -1,0 +1,63 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">订单管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__APP__/Product" class="sgbtn">＋产品管理</a></h3>
+		
+     
+				
+				<table class="fixwidth"> <form method="post" name="form1" action="__URL__">
+					<tr>
+						<td>订单编号
+						  <input name="pcode" type="text" class="txt" id="pcode" />
+						  或 客户姓名
+					    <input name="username" type="text" class="txt" id="username" />						    <input type="submit" value="搜索" class="inputButton" /></td>
+					</tr>
+				</form></table>
+  
+          <table class="datalist fixwidth" ><form name="form1" method="post" action="__URL__/submit">
+            <tr>
+              <th><input name="checkbox" type="checkbox" class="checkbox" onClick="selAll(this)" value="选择全部">
+                  选择</th>
+              <th>订单编号</th>
+              <th>客户姓名</th>
+              <th>联系电话</th>
+              <th>订单状态</th>
+              <th>订单详情</th>
+              <th>提交时间</th>
+              <th>操作</th>
+            </tr><present name="list">
+            <volist name="list" id="vo">
+            <tr>
+              <td class="option"><input name="id[]" type="checkbox" id="id[]" value="{$vo.id}" class="checkbox">
+                {$vo.id}</td>
+              <td><strong>{$vo.pcode}</strong></td>
+              <td>{$vo.username}</td>
+              <td>{$vo.tel}</td>
+              <td><if condition="$vo['ischecked'] eq 1 ">已处理<else /><font color="Red">未处理</font></if></td>
+              <td><a href="__URL__/show/id/{$vo.id}"><img src="../Public/images/search.gif" alt="订单详情" align="absmiddle" /></a></td>
+              <td>{$vo.postdate|date="Y-d-m",###}</td> 
+              <td><a href="__URL__/submit/act/delete/id/{$vo.id}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></td>
+            </tr>
+            </volist>
+            <eq name="allowbat" value="1"> <tr class="nobg">
+              <td colspan="8"><font color="red">操作类型：</font><input name="act" type="radio"  class="checkbox" value="uischecked" checked="checked" />
+已处理
+<input name="act" type="radio" value="ischecked"  class="checkbox"/>
+未处理<input name="act" type="radio" class="checkbox" value="delete" >
+										     删除
+									          <input type="submit" value="提交操作" class="inputButton" onClick="return confirm('确定提交吗');" /></td>
+            </tr></eq>
+            <tr class="nobg">
+              <td colspan="8" class="tdpage">{$page}</td>
+            </tr><else />
+			  <tr><td colspan="8" align="center">无内容</td>
+			  </tr>
+			</present>
+          </form></table>
+        <p class="i">!!</p>
+        <br>
+<include file="Public:footer" />

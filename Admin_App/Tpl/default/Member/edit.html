@@ -1,0 +1,84 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">编辑用户</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回用户管理</a><a href="__URL__/add" class="sgbtn">＋添加用户</a></h3>
+		
+      
+
+				
+				<table width="100%">  <form method="post" name="form1" action="__URL__/edits">
+<input type="hidden" name="id" value="{$list.id}" />
+					<tr>
+					  <td>用 户 名
+    {$list.username}</td>
+				  </tr>
+					<tr>
+					  <td>密　　码
+    <input name="password" type="password" id="password" class="txt"/>
+    <input name="opassword" type="hidden" id="opassword" value="{$list.password}" />
+    <input name="userphoto" type="hidden" id="userphoto" /></td>
+				  </tr>
+					<tr>
+					  <td>密保问题
+    <input name="question" type="text" id="question" value="{$list.question}" class="txt"/>  密保答案
+    <input name="answer" type="text" id="answer" value="{$list.answer}" class="txt"  /></td>
+				  </tr>
+					<tr>
+					  <td>用 户 组
+                        <select name="groupid" id="select">
+                   <volist name="group" id="vo">
+                    <option value="{$vo.id}" <eq name="list['groupid']" value="$vo['id']"> selected="selected"</eq>>{$vo.grouptitle}</option>
+                    </volist>
+                </select>
+                      <a href="__APP__/Usergroup"><img src="../Public/images/group.gif" alt="用 户 组权限管理" align="absmiddle" /></a>  <input type="radio" name="ischecked" value="1" 
+					    
+                        
+                      <if condition="$list['ischecked'] eq 1 ">checked="checked"</if>
+                        class="checkbox"/>
+                        正常 <input name="ischecked" type="radio" value="0" 
+                        <if condition="$list['ischecked'] eq 0 ">checked="checked"</if>
+                        class="checkbox"/>
+                      锁定</td>
+				  </tr>
+					<tr>
+					  <td>真实姓名
+    <input name="realname" type="text" id="realname" value="{$list.realname}" class="txt"/>    &nbsp;性  别： <input name="sex" type="radio" value="1" 
+    <if condition="$list['sex'] eq 1 ">checked="checked"</if>
+    class="checkbox"/>男 <input type="radio" name="sex" value="0" 
+    <if condition="$list['sex'] eq 0 ">checked="checked"</if>
+    class="checkbox"/>
+    女</td>
+				  </tr>
+					<tr>
+					  <td>地　　址
+                      <input name="address" type="text" id="address" value="{$list.address}" class="txt"/> 
+                      移动电话
+                      <input name="fax" type="text" id="fax" value="{$list.fax}" class="txt"/></td>
+				  </tr>
+					<tr>
+					  <td>电　　话
+                      <input name="telphone" type="text" id="telphone" value="{$list.telphone}" class="txt"/> 
+                      邮　　箱
+                      <input name="email" type="text" id="email" value="{$list.email}" class="txt"/></td>
+				  </tr>
+					<tr>
+					  <td>网　　址
+                      <input name="web" type="text" id="web" value="{$list.web}" class="txt"/> 
+                      QQ　　
+                      <input name="qq" type="text" id="qq" value="{$list.qq}" class="txt"/></td>
+				  </tr>
+					<tr>
+					  <td>&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td><input type="submit" name="Submit2" value="提交更新" class="inputButton" />
+                    <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+				  </tr>
+				</form></table>
+<p class="i">红色标记的内容必须填写,系统默认超级管理员不允许修改所属的组</p>
+        <br>
+<include file="Public:footer" />

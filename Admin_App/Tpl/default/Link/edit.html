@@ -1,0 +1,71 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">编辑链接</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回链接管理</a></h3>
+		
+        
+
+				
+				<table width="100%"><form method="post" name="form1" action="__URL__/edits" enctype="multipart/form-data">
+<input type="hidden" name="id" value="{$vo.id}" />
+					<tr>
+					  <td>链接类型</td>
+					  <td>    <input name="types" type="radio" value="1" <if condition="$vo['types'] eq 1 ">checked="checked"</if> 
+					    class="checkbox"/>
+普通链接
+<input name="types" type="radio" value="2" 
+<if condition="$vo['types'] eq 2 ">checked="checked"</if> 
+class="checkbox"/>
+合作伙伴</td>
+				  </tr>
+					<tr>
+					  <td>网站名称</td>
+					  <td>  <input name="title" type="text" class="txt redtxt" id="title" value="{$vo.title}"  size="40" maxlength="50" />
+&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td>网站地址</td>
+					  <td> <input name="url" type="text" class="txt redtxt" id="url" value="{$vo.url}"  size="40" /></td>
+				  </tr>
+					<tr>
+					  <td>logo</td>
+					  <td><input name="img" type="file" id="img" />
+					    不修改图片请勿选择
+				        <input name="logo" type="hidden" id="logo" value="{$vo.logo}" />
+					{$vo.logo}
+								
+								
+					  </td>
+				  </tr>
+					<tr>
+					  <td>是否隐藏</td>
+					  <td> <if condition="$vo['ischecked'] eq 1 "><input type="radio" name="ischecked" value="0" class="checkbox"/>隐藏链接<else/><input type="radio" name="ischecked" value="1" class="checkbox"/>显示链接</if> 
+
+
+  <input type="radio" name="dellogo" value="1" class="checkbox"/>
+  转为文字链接(<font color="red">已上传图片将被删除</font>)</td>
+				  </tr>
+					<tr>
+					  <td>排序</td>
+				  <td><input name="orders" type="text" class="txt" id="orders"  value="{$vo.orders}" size="8" /></td>
+				  </tr>
+					<tr>
+					  <td>描述</td>
+				  <td><textarea name="intro" cols="60" rows="5" class="txt" id="intro">{$vo.intro}</textarea></td>
+				  </tr>
+					<tr>
+					  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td></td>
+					  <td> <input type="submit" name="Submit2" value="提交更新" class="inputButton" />
+      <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+				  </tr>
+				</form></table>
+<p class="i">删除后前台不可见,谨慎操作</p>
+        <br>
+<include file="Public:footer" />

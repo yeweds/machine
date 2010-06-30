@@ -1,0 +1,61 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">留言管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋添加留言</a></h3>
+		
+       
+				
+				<table class="fixwidth"><form method="post" name="form1" action="__URL__">
+					<tr>
+						<td>关键字:
+					    <input name="keyword" type="text" class="txt" id="keyword" />					    <input type="submit" value="搜索" class="inputButton" /></td>
+				  </tr>
+				</form></table>
+
+          <table class="datalist fixwidth" > <form name="form1" method="post" action="__URL__/submit">
+            <tr>
+              <th><input name="checkbox" type="checkbox" class="checkbox" onClick="selAll(this)" value="选择全部">
+                  选择</th>
+              <th>留言类型</th>
+              <th>留言者</th>
+              <th>回复?</th>
+               <th>前台审核?</th>
+              <th>提交时间</th>
+              <th>操作</th>
+            </tr><present name="list">
+            <volist name="list" id="vo">
+            <tr>
+              <td class="option"><input name="id[]" type="checkbox" id="id[]" value="{$vo.id}" class="checkbox">
+                {$vo.id}</td>
+              <td><switch name='vo.type'> <case value='advice'>建议</case> <case value='complain'>投诉</case> <case value='praise'>合作交流</case> <case value='question'>售后反馈</case> <case value='gbook'>网站留言</case> <case value='order'>产品订购</case> <default/>其它 </switch></td>
+              <td>{$vo.username}</td>
+              <td><if condition="$vo['reply'] eq '' "><a href="__URL__/reply/id/{$vo.id}"><img src="../Public/images/delete.png" align="absmiddle" alt="未回复"/></a>
+              <else /><img src="../Public/images/checked.gif" alt="回复" align="absmiddle" /> </if></td>
+               <td><if condition="$vo['ischecked'] eq 0"><img src="../Public/images/delete.png" align="absmiddle" alt="未审核"/> 
+              <else /><img src="../Public/images/checked.gif" alt="已审核" align="absmiddle" /> </if></td>
+              <td>{$vo.postdate|date="Y-m-d",###}</td>
+              <td><a href="__URL__/edit/id/{$vo.id}"><img src="../Public/images/search.gif" alt="查看" align="absmiddle" /></a> <a href="__URL__/reply/id/{$vo.id}"><img src="../Public/images/reply.gif" alt="回复" align="absmiddle" /></a> 　<a href="__URL__/submit/act/delete/id/{$vo.id}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></td>
+            </tr>
+            </volist>
+            <eq name="allowbat" value="1"> <tr class="nobg">
+              <td colspan="7"><font color="red">操作类型：</font><input name="act" type="radio"  class="checkbox" value="uischecked" checked="checked"/>
+                审核<input name="act" type="radio" value="ischecked"  class="checkbox"/>
+                取消审核
+                 <input name="act" type="radio" class="checkbox" value="delete" >
+										    删除 
+									          <input type="submit" value="提交操作" class="inputButton" onClick="return confirm('确定提交吗');" /></td>
+            </tr></eq>
+            <tr class="nobg">
+              <td colspan="7" class="tdpage">{$page}</td>
+            </tr><else />
+			  <tr><td colspan="7" align="center">无内容</td>
+			  </tr>
+			</present>
+          </form></table>
+        
+				<p class="i">删除不可恢复,谨慎操作</p>
+        <br>
+<include file="Public:footer" />

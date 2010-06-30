@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>菜单</title>
+<link href="../Public/images/menu.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base target="mcMainFrame" />
+</head>
+<script language="javascript">
+<!--
+function $(objectId) 
+{
+	 return document.getElementById(objectId);
+}
+
+function showHide(objname)
+{
+    var obj = $(objname);
+    if(obj.style.display == "none")
+    {
+        obj.style.display = "block";
+    }
+    else
+    {
+        obj.style.display = "none";
+    }
+    
+    return false;
+}
+
+function refreshMainFrame(url)
+{
+    parent.mcMainFrame.document.location = url;
+}
+-->
+</script>
+<base target="mcMainFrame">
+<body>
+<div class="menu">
+
+<switch name="action">
+<case value="Systemconfig">
+    <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">系统配置</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Settings'>基本设置</a></li>
+                <li><a href='__APP__/Settings/index#attachments'>附件设置</a></li>
+
+                <li><a href='__APP__/Settings/index#seo'>SEO设置</a></li>
+				 <li><a href='__APP__/Settings/index#kernel'>内核设置</a></li>
+                
+            </ul>
+        </dd>
+    </dl>
+   <eq name="security['allowdatabase']" value="1">  <dl>
+        <dt><a href="" onclick="return showHide('items1');" target="_self">数据库管理</a></dt>
+        <dd id="items1" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Database'>数据表优化</a></li>
+				<!--li><a href='__APP__/Database'>执行SQL</a></li-->
+            </ul>
+        </dd>
+    </dl></eq>
+     </dl>
+  <dl>
+        <dt><a href="" onclick="return showHide('items2');" target="_self">缓存管理</a></dt>
+        <dd id="items2" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Cache'>缓存管理</a></li>
+				
+            </ul>
+        </dd>
+    </dl>
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+</case>
+<case value="Article">
+
+    <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">新闻模块</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Article'>新闻管理</a></li>
+                <!-- li><a href='__APP__/Special'>频道管理</a></li-->
+				<li><a href='__APP__/Article/comment'>评论管理</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <!--dl>
+        <dt><a href="" onclick="return showHide('items1');" target="_self">系统配置</a></dt>
+        <dd id="items1" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Category'>系统配置</a></li>
+			  <li><a href='__APP__/Category/add'>系统配置</a></li>
+          </ul>
+        </dd>
+    </dl-->	
+   <eq name="security['allowcategory']" value="1"> 
+    <dl>
+    <dt><a href="" onclick="return showHide('items2');" target="_self">类别管理</a></dt>
+        <dd id="items2" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Article/category'>类别管理</a></li>
+				<li><a href='__APP__/Article/categoryadd'>添加分类</a></li>
+            </ul>
+        </dd>
+    </dl>	
+</eq>
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+
+</case>
+<case value="Product">
+    <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">产品模块</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Product'>产品管理</a></li>
+				<li><a href='__APP__/Order'>订单管理</a></li>
+            </ul>
+        </dd>
+    </dl>
+	
+ <eq name="security['allowcategory']" value="1"> 
+<dl>
+ <dt><a href="" onclick="return showHide('items2');" target="_self">类别管理</a></dt>
+        <dd id="items2" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Product/category'>类别管理</a></li>
+				<li><a href='__APP__/Product/categoryadd'>添加分类</a></li>
+            </ul>
+        </dd>
+    </dl>	
+ </eq> 
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+
+</case>
+
+<case value="Job">
+    <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">招聘模块</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Job'>招聘管理</a></li>
+				<li><a href='__APP__/Job/add'>发布招聘</a></li>
+				<li><a href='__APP__/Job/resume'>应聘管理</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+</case>
+<case value="Announce">
+
+    <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">公告模块</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Announce'>公告管理</a></li>
+				<li><a href='__APP__/Announce/add'>发布公告</a></li>
+            </ul>
+        </dd>
+    </dl>
+    
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+</case>
+<case value="Member">
+
+    <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">用户模块</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Member'>用户管理</a></li>
+				<li><a href='__APP__/Member/add'>添加用户</a></li>
+            </ul>
+        </dd>
+    </dl>
+
+<dl>
+        <dt><a href="" onclick="return showHide('items1');" target="_self">权限模块</a></dt>
+        <dd id="items1" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Usergroup'>用户组管理</a></li>
+				<li><a href='__APP__/Usergroup/add'>添加用户组</a></li>
+            </ul>
+        </dd>
+    </dl>	
+
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+
+</case>
+
+<case value="Feedback">
+    <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">留言模块</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<li><a href='__APP__/Feedback'>留言管理</a></li>
+				<li><a href='__APP__/Feedback/add'>添加留言</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+
+</case>
+<case value="Other">
+   <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">其它管理</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<eq name="security['allowpages']" value="1"><li><a href='__APP__/Pages'>单页管理</a></li></eq>
+				<eq name="security['allowlink']" value="1"><li><a href='__APP__/Link'>链接管理</a></li></eq>
+				<eq name="security['allowscroll']" value="1"><li><a href='__APP__/Scroll'>图片管理</a></li></eq>
+				<li><a href='__APP__/Index/clear'>清除缓存</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+
+</case>
+<case value="Menumanage">
+   <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">导航管理</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<eq name="security['allowpages']" value="1"><li><a href='__APP__/Menumanage'>顶部菜单</a></li></eq>
+				<eq name="security['allowlink']" value="1"><li><a href='__APP__/Menumanage/add'>添加顶部菜单</a></li></eq>
+            </ul>
+        </dd>
+    </dl>
+    <script type="text/javascript">refreshMainFrame('{$url}');</script>
+
+</case>
+<default />
+
+    <dl>
+        <dt><a href="" onclick="return showHide('items0');" target="_self">快捷方式</a></dt>
+        <dd id="items0" style="display:block;">
+            <ul>
+				<eq name="security['allowsystem']" value="1"><li><a href='__APP__/Settings'>系统配置</a></li></eq>
+				<eq name="security['allowarticle']" value="1"><li><a href='__APP__/Article'>新闻管理</a></li></eq>
+				<eq name="security['allowproduct']" value="1"><li><a href='__APP__/Product'>产品管理</a></li></eq>
+				<eq name="security['alloworder']" value="1"><li><a href='__APP__/Order'>订单管理</a></li></eq>
+				<eq name="security['allowjob']" value="1"><li><a href='__APP__/Job'>招聘管理</a></li></eq>
+				<eq name="security['allowannounce']" value="1"><li><a href='__APP__/Announce'>公告管理</a></li></eq>
+				<eq name="security['allowmember']" value="1"><li><a href='__APP__/Member'>用户管理</a></li></eq>
+                <eq name="security['allowgroup']" value="1"><li><a href='__APP__/Usergroup'>用户组管理</a></li></eq>
+				<eq name="security['allowfeedback']" value="1"><li><a href='__APP__/Feedback'>留言管理</a></li></eq>
+				<eq name="security['allowmenumanage']" value="1"><li><a href='__APP__/Menumanage'>导航管理</a></li></eq>				
+                <eq name="security['allowpages']" value="1"><li><a href='__APP__/Pages'>单页管理</a></li></eq>
+                <eq name="security['allowlink']" value="1"><li><a href='__APP__/Link'>链接管理</a></li></eq>
+            </ul>
+        </dd>
+    </dl>
+<script type="text/javascript">refreshMainFrame('{$url}');</script>
+
+
+
+</switch>
+
+
+
+</div>
+</body>
+</html>

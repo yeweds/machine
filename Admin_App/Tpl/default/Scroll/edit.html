@@ -1,0 +1,50 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">编辑图片</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回图片管理</a></h3>
+		
+        
+
+				
+				<table width="100%"><form method="post" name="form1" action="__URL__/edits" enctype="multipart/form-data">
+<input type="hidden" name="id" value="{$vo.id}" />
+					<tr>
+					  <td>名称</td>
+					  <td>  <input name="subject" type="text" class="txt redtxt" id="subject" value="{$vo.subject}"  size="40" maxlength="50" />
+&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td>地址</td>
+					  <td> <input name="url" type="text" class="txt redtxt" id="url" value="{$vo.url}"  size="40" /></td>
+				  </tr>
+					<tr>
+					  <td>图片</td>
+					  <td><input name="img" type="file" id="img" />
+					    不修改图片请勿选择
+				        <input name="attachment" type="hidden" id="attachment" value="{$vo.attachment}" />
+					{$vo.attachment}					  </td>
+				  </tr>
+					<tr>
+					  <td>排序</td>
+				  <td><input name="orders" type="text" class="txt" id="orders"  value="{$vo.orders}" size="8" /></td>
+				  </tr>
+					<tr>
+					  <td>描述</td>
+				  <td><textarea name="content" cols="60" rows="5" class="txt" id="content">{$vo.content}</textarea></td>
+				  </tr>
+					<tr>
+					  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td></td>
+					  <td> <input type="submit" name="Submit2" value="提交更新" class="inputButton" />
+      <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+				  </tr>
+				</form></table>
+<p class="i">图片尺为230px*330px</p>
+        <br>
+<include file="Public:footer" />

@@ -1,0 +1,30 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">回复留言</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回留言</a></h3>
+		
+      
+          <table width="100%">  <form method="post" name="form1" action="__URL__/replysave">
+          <input type="hidden" name="id" value="{$vo.id}" />
+            <tr>
+              <td>回复内容</td>
+              <td>
+                <textarea name="reply" cols="48" rows="5" class="textarea" id="reply">{$vo.reply|stripslashes}</textarea></td>
+            </tr>
+            <tr>
+              <td>回复时间</td>
+              <td><input name="replydate" type="text" id="m_time22" value="<?php echo date("Y-m-d H:i:s"); ?>" size="22"   /></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>
+                <input type="submit" name="Submit2" value="提交操作" class="inputButton" />
+                <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+            </tr>
+         </form> </table>
+        <p class="i">删除后前台不可见,谨慎操作</p>
+        <br>
+<include file="Public:footer" />

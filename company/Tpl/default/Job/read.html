@@ -1,0 +1,57 @@
+<include file="Public:header" />
+<div class="main940">
+
+<div class="sub">
+<div class="title"><h2>{$cate_name}</h2></div>
+<ul class="subList">
+<foreach name='left_menu' item="volist">
+<li><a href="{$volist.link}"><strong>{$volist.subject}</strong></a></li>
+</foreach>
+</ul>
+<div class="subg"></div>
+</div>
+<!-- sub -->
+
+<div class="main">
+<div class="banner"><img src="../Public/images/banner06.jpg" /></div>
+<div class="location"><span>当前位置：</span><a href="">首页</a> > 求纳贤才</div>
+<div class="title"><h1>求纳贤才</h1></div>
+
+<div class="mainList">
+
+<table class="Board_Tab" cellspacing="0" cellpadding="0" 
+  width="100%" border="0">
+  <tbody>
+  
+      <tr>
+        <td height="30" colspan="2" bgcolor="#F6F6F6" style="BORDER-BOTTOM: #cccccc 1px solid">招聘职位<span style="LINE-HEIGHT: 150%">：</span>{$vo.title}　<img src="../Public/Images/resume.jpg" border="0" /></td>
+      </tr>
+      <tr>
+        <td width="43%" height="30" style="LINE-HEIGHT: 150%">职位待遇：
+          <if condition="$vo['money'] neq ''">{$vo.money}
+            <else />
+        面议</if></td>
+        <td width="57%" height="30" style="LINE-HEIGHT: 150%">招聘人数：{$vo.nums} 名</td>
+      </tr>
+      <tr>
+        <td height="30" style="LINE-HEIGHT: 150%">有效期限：{$vo.exdate} 天</td>
+        <td width="57%" height="30" style="LINE-HEIGHT: 150%">联系电话：{$vo.tel}</td>
+      </tr>
+      <tr>
+        <td height="30" style="LINE-HEIGHT: 150%">工作地点：{$vo.address}</td>
+        <td width="57%" height="30" style="LINE-HEIGHT: 150%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="LINE-HEIGHT: 150%">{$vo.intro}</td>
+      </tr>
+  
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+<!-- main -->
+
+</div>
+<include file="Public:footer" />

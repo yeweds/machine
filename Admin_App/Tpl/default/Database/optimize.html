@@ -1,0 +1,60 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div id="append"></div>
+
+	<div class="container">
+	<h3 class="marginbot">数据库管理<a href="__URL__/optimize" class="sgbtn">＋数据表优化</a><a href="__URL__/repair" class="sgbtn">＋数据表修复</a><a href="__URL__/exesql" class="sgbtn">＋执行SQL</a></h3>
+				<div class="note fixwidthdec">
+		  <p class="i">修复表:修复数据库在进行查询，删除，更新等操作时产生的错误。</p>
+		   <p class="i">优化表:数据表优化可以去除数据文件中的碎片，使数据库运行效率提高。</p>
+	  </div>
+		<present name="d">
+		<h3>数据表修复</h3>
+		<div class="mainbox">
+							
+				<table class="datalist fixwidth" >
+					<tr>
+						<th>表名</th>
+						<th>状态</th>
+						<th>结果</th>
+						<th>操作</th>
+					</tr>  <volist name="d" id="vo" key="key">
+											<tr>
+							<td>
+							{$vo.Table}</td>
+							<td>{$vo.Msg_type}</td>
+							<td>{$vo.Msg_text}</td>
+							<td>{$vo.Op}</td>
+						</tr>  </volist>
+										<tr class="nobg">
+						<td colspan="5">&nbsp;						  </td>
+					</tr>
+				</table></div>
+				</present>
+				<present name="d1">
+				<h3>数据表优化</h3>
+				<table class="datalist fixwidth" >
+					<tr>
+						<th>表名</th>
+						<th>状态</th>
+						<th>结果</th>
+						<th>操作</th>
+					</tr>  <volist name="d1" id="vo" key="key">
+											<tr>
+							<td>
+							{$vo.Table}</td>
+							<td>{$vo.Msg_type}</td>
+							<td>{$vo.Msg_text}</td>
+							<td>{$vo.Op}</td>
+						</tr>  </volist>
+										<tr class="nobg">
+						<td colspan="5">&nbsp;						  </td>
+					</tr>
+				</table>
+				</div>
+				</present>
+	  
+	</div>
+
+
+<include file="Public:footer" />

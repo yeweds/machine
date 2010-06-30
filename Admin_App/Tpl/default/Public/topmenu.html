@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>导航</title>
+<link href="../Public/images/top.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="topnav">
+	<div class="sitenav">
+		<div class="welcome">你好，<span class="username">{$username}</span>，欢迎进入后台管理中心</div>
+		<div class="sitelink"> 
+			<a href="{$http}" target="_blank">网站主页</a> | 
+			<a href="__APP__/Index/modify/id/{$uid}" target="mcMainFrame">我的账户</a> | 
+			<a href="__APP__/Public/logout" target="_top">安全退出</a>
+            <a target="mcMainFrame" title="点击刷新右侧窗口" href="javascript:location.reload()" class="reload">刷新右窗口页面</a>
+		</div>
+	</div>
+	<div class="leftnav">
+		<ul>
+			<li class="navleft"></li>
+			<li id='d1' style="margin-left:-1px"><A href="__APP__/Menu/menu" target="mcMenuFrame" class="tabon">首页</A></li>
+				<eq name="security['allowsystem']" value="1"><li id='d2'><A href="__APP__/Menu/menu/action/Systemconfig" target="mcMenuFrame">系统管理</A></li></eq>
+               <eq name="security['allowmember']" value="1"> <li id='d2'><A href="__APP__/Menu/menu/action/Member" target="mcMenuFrame">用户管理</A></li></eq>
+				<eq name="security['allowarticle']" value="1"><li id='d2'><a href="__APP__/Menu/menu/action/Article" target="mcMenuFrame">新闻管理</a></li></eq>
+				<eq name="security['allowproduct']" value="1"><li id='d2'><a href="__APP__/Menu/menu/action/Product" target="mcMenuFrame">产品管理</a></li></eq>
+                <eq name="security['allowannounce']" value="1"><li id='d4'><A href="__APP__/Menu/menu/action/Announce" target="mcMenuFrame">公告管理</A></li></eq>
+				<eq name="security['allowmenumanage']" value="1"><li id='d2'><a href="__APP__/Menu/menu/action/Menumanage" target="mcMenuFrame">导航管理</a></li></eq>
+				<eq name="security['allowjob']" value="1"><li id='d2'><A href="__APP__/Menu/menu/action/Job" target="mcMenuFrame">招聘管理</A></li></eq>
+				<eq name="security['allowfeedback']" value="1"><li id='d3'><A href="__APP__/Menu/menu/action/Feedback" target="mcMenuFrame">留言管理</A></li></eq>
+				<li id='d3'><A href="__APP__/Menu/menu/action/Other" target="mcMenuFrame">其它管理</A></li>
+			<li class="navright"></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

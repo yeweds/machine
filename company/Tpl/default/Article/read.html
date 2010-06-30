@@ -1,0 +1,48 @@
+<include file="Public:header" />
+<!--<script type="text/javascript">
+function $(id) {
+	return document.getElementById(id);
+}
+function fleshVerify(){
+//重载验证码
+var timenow = new Date().getTime();
+document.getElementById('verifyImg').src= '__URL__/verify/'+timenow;
+}
+</script>-->
+
+
+<div class="main940">
+
+<div class="sub">
+<div class="title"><h2>新闻动态</h2></div>
+
+<ul class="subList">
+<volist name="cate" id="vol">
+<li class="blue"><a href="__ROOT__/Article/index/id/{$vol.id}.html"><strong>{$vol.title}</strong></a></li>
+</volist>
+</ul>
+<div class="subg"></div>
+</div>
+<!-- sub -->
+
+<div class="main">
+<div class="banner"><img src="../Public/images/br.jpg" /></div>
+<div class="location"><span>当前位置：</span><a href="__ROOT__/">首页</a> > <a
+		href="__ROOT__/Article.html">新闻动态 </a></div>
+<div class="endtitle"><h1>{$vo.subject}</h1></div>
+<div class="mainEnd">
+<div class="contact">
+{$vo.content}
+</div>
+<div id="mainfooter">
+<div style="text-align:left;margin:5px 20px"> 发布：{$vo.postdate|date="Y-m-d",###}　浏览：{$vo.hits}</div>
+<div style="text-align:left;margin:5px 20px">上一篇:{$front}</div>
+<div style="text-align:left;margin:5px 20px">下一篇:{$after}</div>
+</div>
+
+</div>
+<!-- main -->
+
+</div>
+
+<include file="Public:footer" />

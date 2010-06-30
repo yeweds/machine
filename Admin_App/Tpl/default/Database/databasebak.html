@@ -1,0 +1,58 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div id="append"></div>
+	<div class="container">
+	
+		<h3 class="marginbot">数据库管理<a href="__URL__/optimize" class="sgbtn">＋数据表优化</a><a href="__URL__/repair" class="sgbtn">＋数据表修复</a></h3>
+			<div class="hastabmenu">
+		<ul class="tabmenu">
+			<li class="tabcurrent"><a href="#" class="tabcurrent">数据备份</a></li>
+		</ul>
+		<div class="tabcontentcur">
+			<form action="admin.php?m=db&a=export" method="post">
+			<input type="hidden" name="formhash" value="de3e994a6d676ebe">
+			<table>
+				<tr>
+					<td>备份文件名:</td>
+					<td><input type="text" name="filename" value="080723_vs7h" class="txt" />.sql</td>
+					<td> &nbsp; 分卷长度(kb):</td>
+					<td><input type="text" name="sizelimit" value="2048" class="txt" /></td>
+					<td><input type="submit" value="提 交"  class="inputButton" /></td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+	<h3>数据备份记录</h3>
+	<div class="mainbox">
+					<form action="admin.php?m=db&a=ls" method="post">
+				<input type="hidden" name="formhash" value="de3e994a6d676ebe">
+				<table class="datalist fixwidth">
+					<tr>
+						<th width="10%"><input type="checkbox" name="chkall" id="chkall" onclick="checkall('delete[]')" class="checkbox" /><label for="chkall">删除</th>
+						<th>文件名</th>
+						<th>版本</th>
+						<th>时间</th>
+						<th>尺寸</th>
+						<th>卷号</th>
+						<th>操作</th>
+					</tr>
+										<tr>
+						<td><input type="checkbox" name="delete[]" value="080720_F3RB-1.sql" class="checkbox" /></td>
+						<td><a href="./data/backup/080720_F3RB-1.sql" target="_blank">080720_F3RB-1.sql</a></td>
+						<td>1.0.0</td>
+						<td>08-7-21 12:16 AM</td>
+						<td>15.37 KB</td>
+						<td>1</td>
+						<td><a href="###" onclick="if(window.confirm('导入备份数据将会覆盖现有用户中心的数据，您确定导入吗？。')) {window.location='admin.php?m=db&a=import&file=080720_F3RB-1.sql';}">导入</a></td>
+					</tr>
+										<tr class="nobg">
+						<td><input type="submit" value="提 交" class="inputButton" /></td>
+						<td class="tdpage" colspan="2"></td>
+					</tr>
+				</table>
+			</form>
+			</div>
+</div>
+
+<include file="Public:footer" />

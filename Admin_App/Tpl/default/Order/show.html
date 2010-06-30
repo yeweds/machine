@@ -1,0 +1,88 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">查看订单</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋订单管理</a><a href="__APP__/Product" class="sgbtn">＋产品管理</a></h3>
+		
+       
+				
+				<table width="100%"> <form method="post" name="form1" action="__URL__/update">
+<input name="id" type="hidden" id="id" value="{$vo.id}" />
+					<tr>
+					  <td>订单编号</td>
+					  <td>{$vo.pcode}</td>
+				  </tr>
+					<tr>
+					  <td width="11%">产品名称</td>
+					  <td width="89%">{$vo.subject}</td>
+				  </tr>
+					<tr>
+					  <td>产品型号</td>
+					  <td><input name="spec" type="text" class="txt" id="spec" value="{$vo.spec}" />					    &nbsp;</td>
+				  </tr>
+					<tr>
+                      <td>订购数量</td>
+                      <td>
+                        <input name="num" type="text" class="txt" id="num" value="{$vo.numb}" />
+&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td>公司名称</td>
+					  <td><input name="company" type="text" class="txt" id="company" value="{$vo.company}" /></td>
+				  </tr>
+					<tr>
+					  <td>客户姓名</td>
+					  <td><input name="username" type="text" class="txt" id="username" value="{$vo.username}"  /></td>
+				  </tr>
+					<tr>
+					  <td>收货地址</td>
+				  <td><input name="address" type="text" class="txt" id="address" value="{$vo.address}" /></td>
+				  </tr>
+					<tr>
+					  <td>邮政编码</td>
+				  <td><input name="zip" type="text" class="txt" id="zip" value="{$vo.zip}" /></td>
+				  </tr>
+					<tr>
+					  <td>电　　话</td>
+				  <td><input name="tel" type="text" class="txt" id="tel" value="{$vo.tel}" /></td>
+				  </tr>
+					<tr>
+					  <td>传　　真</td>
+				  <td><input name="fax" type="text" class="txt" id="fax" value="{$vo.fax}" /></td>
+				  </tr>
+					<tr>
+					  <td>邮箱</td>
+				  <td><input name="email" type="text" class="txt" id="email" value="{$vo.email}" /></td>
+				  </tr>
+					<tr>
+					  <td>订货日期</td>
+				  <td><input name="date" type="text" class="txt" id="date" value="{$vo.postdate}" /></td>
+				  </tr>
+					<tr>
+					  <td>备注</td>
+					  <td><textarea name="intro" cols="40" rows="5" class="txt" id="intro">{$vo.intro}</textarea></td>
+				  </tr>
+					<tr>
+					  <td>订单状态</td>
+				  <td><input name="ischecked" type="radio" class="checkbox" value="1" <if condition="$vo['ischecked'] eq 1 ">checked="checked"</if>/>
+				    已处理
+				    <input type="radio" name="ischecked" value="0" class="checkbox"  <if condition="$vo['ischecked'] eq 0 ">checked="checked"</if>/>
+				    未处理</td>
+				  </tr>
+					<tr>
+					  <td>&nbsp;</td>
+					  <td>&nbsp;</td>
+				  </tr>
+					<tr>
+					  <td>&nbsp;</td>
+					  <td>
+					    <input type="submit" name="Submit" value="提交更新" class="inputButton" />
+                        <input type="reset" name="Submit2" value="还原重填" class="inputButton" /></td>
+					</tr>
+				</form></table>
+				<p class="i">!</p>
+        <br>
+<include file="Public:footer" />

@@ -1,0 +1,90 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">添加新闻</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__" class="sgbtn">＋返回新闻管理</a></h3>
+		
+        
+          <table width="100%" border="0" cellpadding="3" cellspacing="0"><form method="post" name="form1" action="__URL__/adds" enctype="multipart/form-data">
+            <tr>
+              <td>新闻标题
+                <input name="subject" type="text" class="txt redtxt" id="subject" size="40" />
+                <select name="color" id="color">
+                <option value="" >默认颜色</option>
+                  <option value="#87CEEB" style="background-color:#87CEEB;color:#87CEEB">#87CEEB</option>
+                  <option value="#4169E1" style="background-color:#4169E1;color:#4169E1">#4169E1</option>
+                  <option value="#0000FF" style="background-color:#0000FF;color:#0000FF">#0000FF</option>
+                  <option value="#00008B" style="background-color:#00008B;color:#00008B">#00008B</option>
+                  <option value="#FFA500" style="background-color:#FFA500;color:#FFA500">#FFA500</option>
+                  <option value="#FF4500" style="background-color:#FF4500;color:#FF4500">#FF4500</option>
+                  <option value="#8B0000" style="background-color:#8B0000;color:#8B0000">#8B0000</option>
+                  <option value="#008000" style="background-color:#008000;color:#008000">#008000</option>
+                  <option value="#2E8B57" style="background-color:#2E8B57;color:#2E8B57">#2E8B57</option>
+                  <option value="#FF1493" style="background-color:#FF1493;color:#FF1493">#FF1493</option>
+                  <option value="#FF6347" style="background-color:#FF6347;color:#FF6347">#FF6347</option>
+                  <option value="#4B0082" style="background-color:#4B0082;color:#4B0082">#4B0082</option>
+                  <option value="#A0522D" style="background-color:#A0522D;color:#A0522D">#A0522D</option>
+                  <option value="#D2691E" style="background-color:#D2691E;color:#D2691E">#D2691E</option>
+                  </select>
+              <input name="uid" type="hidden" id="uid" value="{$user.id}"></td>
+            </tr>
+            <tr>
+              <td>类别名称
+                <select name="cid"  id="select" class="txt redtxt" >
+                <volist name="cate" id="vo"><option value="{$vo.id}" <eq name="vo['id']" value="$cid">selected="selected"</eq>>{$vo.title}</option></volist>
+                </select>              
+                会　　员
+              <input name="username" type="text" class="txt" id="username" value="{$user.username}" size="15" /></td>
+            </tr>
+            <tr>
+              <td>
+                
+                内容摘要
+                <textarea name="message" cols="60" rows="3"  id="message"></textarea></td>
+            </tr>
+            <tr>
+              <td><html:editor type="fckeditor" id="editor" width="80%" height="300x" name="content"  /></td>
+            </tr>
+            <tr>
+              <td><strong>以下为选填内容</strong></td>
+            </tr>
+            <tr>
+              <td>来源
+                <input name="comefrom" type="text" class="txt" id="comefrom" maxlength="50"  />
+                外部链接
+                <input name="link" type="text" class="txt" id="link" size="50" maxlength="100"></td>
+            </tr>
+            <tr>
+              <td>浏览
+              <input name="hits" type="text" id="hits2" value="0" size="8" maxlength="12"  />
+              <!--input name="istop" type="radio" id="istop" value="1" class="checkbox"/>
+              推荐新闻
+              <input name="isgood" type="radio" id="isgood" value="1" class="checkbox"/>置顶新闻 -->
+             
+                <input name="ischecked" type="radio" id="radio" value="1" checked="checked" class="radio"/>
+审核
+<input type="radio" name="ischecked" id="radio2" value="0" class="radio"/>
+未审核</td>
+            </tr>
+            <tr>
+              <td>缩 略 图
+                <input name="attachment" type="file" id="attachment" />
+              如果上传了缩略图，则会自动将该新闻标记为图片新闻</td>
+            </tr>
+           
+           
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>
+                <input type="submit" name="Submit2" value="确定新增" class="inputButton" />
+              <input type="reset" name="Reset" value="还原重填" class="inputButton" /></td>
+            </tr>
+         </form> </table>
+<p class="i">红色标记的内容必须填写</p>
+        <br>
+<include file="Public:footer" />

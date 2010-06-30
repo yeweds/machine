@@ -1,0 +1,52 @@
+<include file="Public:header" />
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/js/external/lightbox/jquery.lightbox.js"></script>
+<link href="__PUBLIC__/Js/jquery/js/external/lightbox/css/lightbox.css" rel="stylesheet" />
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".lightbox").lightbox({fixedNavigation:true});
+});
+</script>
+<div class="main940">
+
+<div class="sub">
+<div class="title"><h2> 成功案例</h2></div>
+<ul class="subList">
+ <volist name="cate" id="cate">
+<li><a href="__ROOT__/Product/index/id/{$cate.id}.html"><strong>{$cate.title}</strong></a></li>
+</volist>
+</ul>
+<div class="subg"></div>
+</div>
+<!-- sub -->
+
+<div class="main">
+<div class="banner"><img src="../Public/images/banner04.jpg" /></div>
+<div class="location"><span>当前位置：</span><a href="">首页</a> > 成功案例</div>
+<div class="endtitle"><h1>成功案例</h1></div>
+
+<div class="mainEnd">
+<div class="contact">
+  <div>{$vo.subject}</div>
+  <div>
+    <if condition="$vo['attachment'] neq ''">
+	<a href="__ROOT__/attachments/product/{$vo.attachpath}/{$vo.attachment}" class="lightbox" rel="flowers" title="{$vo.subject}"><img src="__ROOT__/attachments/product/{$vo.attachpath}/{$vo.attachthumb}" alt="{$vo.subject}" border="0" width="200" height="110" /></a>
+	<else />
+	<img src="../Public/images/nopic.jpg" width="200" height="110" border="0" />
+	</if></div>
+  <div><neq name="list['spec']" value="">产品型号:{$vo.spec}<br></neq></div>
+  <div><neq name="list['size']" value="">产品尺寸:{$vo.size}</neq></div>
+   <div></div> 
+  <div><neq name="list['meno']" value="">其它参数:{$vo.meno} </neq></div>
+  <div>其它参数:{$vo.meno}</div>
+  <div>详细介绍: 
+      <a href="__APP__/Product/order/id/{$vo.id}.html" target="_blank"><img src="../Public/images/order.jpg" border="0" /></a>
+  </div>
+  <div>{$vo.content}</div>
+</div>
+</div>
+
+</div>
+<!-- main -->
+
+</div>
+<include file="Public:footer" />

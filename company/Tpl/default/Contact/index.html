@@ -1,0 +1,56 @@
+<include file="Public:header" />
+<div class="main940">
+
+<div class="sub">
+<div class="title"><h2>{$cate_name}</h2></div>
+<ul class="subList">
+<foreach name='left_menu' item="volist">
+<li><a href="__ROOT__/{$volist.link}"><strong>{$volist.subject}</strong></a></li>
+</foreach>
+</ul>
+<div class="subg"></div>
+</div>
+<!-- sub -->
+
+<div class="main">
+<div class="banner"><img src="../Public/images/banner07.jpg" /></div>
+<div class="location"><span>当前位置：</span><a href="">首页</a> > 联系我们</div>
+<div class="title"><h1>联系我们</h1></div>
+
+<div class="mainList">
+<div class="contact">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center"><strong>公司名称</strong></td>
+<td>{$company}</td>
+</tr>
+<tr>
+<td align="center"><strong>联 系 人</strong></td>
+<td>{$linkman}</td>
+</tr>
+<tr>
+<td align="center"><strong>电　　话</strong></td>
+<td>{$telephone}</td>
+</tr>
+<tr>
+<td align="center"><strong>传　　真</strong></td>
+<td>{$fax}</td>
+</tr>
+<tr>
+<td align="center"><strong>邮　　箱</strong></td>
+<td>{$email}</td>
+</tr>
+<tr>
+<td align="center"><strong>地　　址</strong></td>
+<td>{$address}</td>
+</tr>
+</table>
+</div>
+</div>
+
+</div>
+<!-- main -->
+
+</div>
+
+<include file="Public:footer" />

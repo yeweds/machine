@@ -1,0 +1,55 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="bodyTitle">
+	<div class="bodyTitleLeft"></div>
+  <div class="bodyTitleText">招聘管理</div>
+</div>
+<br><h3 class="marginbot"><a href="__URL__/add" class="sgbtn">＋发布招聘</a><a href="__URL__/resume" class="sgbtn">应聘管理</a></h3>
+		
+       
+				
+				<table class="fixwidth"><form method="POST" name="form1" action="__URL__">
+					<tr>
+						<td>招聘职位:
+					    <input name="keyword" type="text" class="txt" id="keyword" />					    <input type="submit" value="搜索" class="inputButton" /></td>
+				  </tr>
+				</form></table>
+
+				
+				<table class="datalist fixwidth" > <form name="form1" method="post" action="__URL__/submit">
+					<tr>
+						<th><input type="checkbox" id="uid[]" onClick="selAll(this)" value="选择全部" class="checkbox">选择</th>
+						<th>招聘职位</th>
+						<th>招聘人数</th>
+						<th>有效期限</th>
+						<th>提交时间</th>
+						<th>操作</th>
+					</tr><present name="list">  <volist name="list" id="vo">
+											<tr>
+							<td class="option"><input name="id[]" type="checkbox" id="id[]" value="{$vo.id}" class="checkbox">{$vo.id}</td>
+							<td><strong>{$vo.title}</strong><eq name="vo['ischecked']" value="0"><img src="../Public/images/suo.gif" alt="暂停招聘" align="absmiddle" /></eq></td>
+							<td>{$vo.nums}</td>
+							<td>{$vo.exdate}天</td>
+							<td>{$vo.postdate|date="Y-m-d",###}</td>
+							<td><a href="__URL__/resume/id/{$vo.id}"><img src="../Public/images/search.gif" alt="查看应聘人员" align="absmiddle" /></a>　<a href="__URL__/edit/id/{$vo.id}"><img src="../Public/images/edit.gif" alt="编辑" align="absmiddle" /></a>　<a href="__URL__/submit/act/delete/id/{$vo.id}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="../Public/images/del.gif" alt="删除" align="absmiddle" /></a></td>
+						</tr>  </volist>
+										 <eq name="allowbat" value="1"><tr class="nobg">
+										  <td colspan="7"><font color="red">操作类型：</font><input name="act" type="radio"  class="checkbox" value="uischecked" checked="checked"/>
+                招聘中
+                  <input name="act" type="radio" value="ischecked"  class="checkbox"/>
+                已招满
+                <input name="act" type="radio" class="checkbox" value="delete" >
+										    删除 
+									          <input type="submit" value="提交操作" class="inputButton" onClick="return confirm('确定提交吗');" /></td>
+				  </tr></eq>
+										<tr class="nobg">
+						<td colspan="7" class="tdpage">{$page}</td>
+					</tr><else />
+			  <tr><td colspan="7" align="center">无内容</td>
+			  </tr>
+			</present>
+				</form></table>
+				<p class="i"><strong>招聘中：</strong>表示网站前台能看到招聘信息，<strong>已招满：</strong>表示此职位人员已经招满,可以暂时隐藏。删除不可恢复,谨慎操作<br /> <img src="../Public/images/search.gif" alt="暂停招聘" align="absmiddle" /> 查看此职位应聘人员信息 <img src="../Public/images/edit.gif" alt="编辑" align="absmiddle" /> 重新修改招聘内容
+</p>
+<br>
+<include file="Public:footer" />
