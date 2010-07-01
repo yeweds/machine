@@ -1,5 +1,5 @@
 <?php 
-// build at 2010-06-16
+// build at 2010-07-01
 
 define('THINK_PATH', './ThinkPHP');
 define('APP_NAME', 'company');
