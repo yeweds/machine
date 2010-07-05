@@ -97,7 +97,7 @@ body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
 #Links{margin:0 auto;width:962px;height:53px; padding-top:10px; border:1px dotted #999999; background-color:#E8E8E8;text-align:center;}
 #Links img{border:0px;}
 .liline{line-height:0px; margin:0px; padding:0px;height:5px;}
-.dlnewsimg{padding-right:5px;vertical-align:middle;}
+.dlnewsimg{padding-right:5px;vertical-align:middle;border:0px}
 #NeiTopTitle{text-align:right;border-bottom: gainsboro 1px solid;font-size:9pt;font-family: 微软雅黑;font-weight:bold;padding:15px 25px 5px 0px;}
 #BodyRightimage
 {
@@ -185,9 +185,6 @@ a:active {color: #615F60;text-decoration: none;}
 .ProdTd2{background:#FFFFFF;}
 .ProdTd3{background:#FFFFFF; height:29px; text-align:right; padding-right:10px;}
 
-h5{display:block;
-color:#6c6b6b;padding:10px 10px;border-bottom:solid 1px #cdcdcd;font-size:12px;text-decoration:none;}
-
 h6
 {
 	display: block;
@@ -273,4 +270,8 @@ span.pager a.current
 .rollBox .ScrCont{width:10000000px;}
 .rollBox #List1,.rollBox #List2{float:left;}
 
-.submenu{display: none;}
+.MenuDiv{display:block;margin:0px; padding:0px}
+.MenuDiv span.mtitle{margin:10px 10px;padding:10px 20px}
+.MenuDiv h5{display:block;color:#6c6b6b;padding:0px; margin:0px;font-size:12px;text-decoration:none;}
+.MenuDiv h5 a{display:block;text-decoration:none;border-bottom:solid 1px #cdcdcd;}
+.MenuDiv h5 a:hover {display:block;background-color:ghostwhite;text-decoration:none;}

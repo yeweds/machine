@@ -1,56 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><present name="titler">{$titler}<else />{$vo.subject}</present> {$Think.config.sitename}-{$vo.seotitle} </title>
-<meta content="{$seokeywords}" name=keywords />
-<meta content="{$seodescription}" name=description />
-<link href="../Public/Css/style.css" rel="stylesheet" />
-<link href="__PUBLIC__/Js/jquery/css/redmond/jquery-ui-1.7.3.custom.css" rel="stylesheet" />
-<script type="text/javascript" src="__PUBLIC__/Js/jquery/js/jquery-1.3.2.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Js/jquery/js/jquery-ui-1.7.3.custom.min.js"></script>
-<script type="text/javascript" src="../Public/js/main.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	$('#main_nav').allenMenu();
-});
-</script>
-</head>
-
-<body>
-
-<div class="top">
-<div class="main960">
-<div class="logo"></div>
-</div>
-</div>
-
-<div class="nav">
-<div id="wrap">
-	<div id="main_nav">
-		<ul>
-		<li><a href="__ROOT__/">首页</a></li>
-		<volist name="top_menu" id="top_menu" >
-			<li><a href="<if condition="($top_menu.link eq '')">javascript:void(0)<else />__ROOT__/{$top_menu.link}</if>">{$top_menu.name}</a>	
-			<neq name="top_menu.pids" value="">
-			<ul>
-				<volist name="top_menu['pids']" id="p">
-				<li><a href="__ROOT__/{$p.link}">{$p.subject}</a></li>
-				</volist>
-			</ul>
-			</neq>
-			</li>	
+<!-- start header -->
+<div id="SiteTop"><span></span></div>
+<div id="SiteMenu">	
+<!-- BEGIN Menu -->
+<div class="menucontainer">
+<div class="menu">
+	<ul>
+		<li><a href="__ROOT__/" target="_self"> 网站首页</li>
+	<volist name="top_menu" id="top_menu">
+		<li><a href="<if condition="($top_menu.link eq '')">javascript:void(0)<else />__ROOT__/{$top_menu.link}</if>" target="_self">
+		{$top_menu.name}
+		<!--[if IE 7]><!-->
+		</a>
+		<!--<![endif]-->
+		<neq name="top_menu.pids" value="">
+		<table class="table-menu"><tr><td><ul>
+			<volist name="top_menu['pids']" id="p">
+			<li><a href="__ROOT__/{$p.link}" target="_self">{$p.subject}</a></li>
 			</volist>
-	        <li><a href="javascript:void(0)">联系我们</a>
-				<ul>
-				<li><a href="__APP__/Contact.html">联系我们</a></li>
-				<li><a href="__APP__/Feedback.html">在线留言</a></li>
-				</ul>
-			</li>			
-		</ul>
-	</div>
-	<div class="clear"></div>
+		</ul></td></tr></table>
+		</neq>
+		<!--[if lte IE 6]>
+		</a>
+		<![endif]-->		
+		</li>		
+	</volist>
+	</ul>
 </div>
-
 </div>
-<!-- header -->
+<!-- END Menu -->
+</div>
+<!-- end header -->

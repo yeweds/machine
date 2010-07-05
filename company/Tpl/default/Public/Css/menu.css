@@ -4,7 +4,7 @@ http://www.cssplay.co.uk*/
 /*menu container*/
 .menucontainer{background: #fff url(../images/bgOFF.gif) no-repeat bottom left;}
 /*basic menu styling*/
-.menu {float:left;font-family: arial,verdana,sans-serif;width:100%;position:relative;font-size:12px;font-weight:bold;
+.menu {float:left;宋体, 微软雅黑;width:100%;position:relative;font-size:12px;font-weight:bold;
 background:url(../images/bgOFF.gif) repeat-x bottom left;border-top:4px solid #B30000;}
 .menu ul {padding:0;margin:0;list-style-type:none;float:left;position:relative;}
 .menu ul li {float:left;position:relative;display:inline;background:url(../images/bgDIVIDER.gif) no-repeat bottom right;}
@@ -16,7 +16,7 @@ background:url(../images/bgOFF.gif) repeat-x bottom left;border-top:4px solid #B
 /*clear the main nav bg*/
 .menu ul li ul li{background:none;}
 /*style for table of sub nav items*/
-table {margin:-1px;border-collapse:collapse;font-size:11px;}
+table {margin:-1px;border-collapse:collapse;font-size:12px;font-weight:normal;}
 /*specific to non IE browsers*/
 /*main nav over state*/
 .menu ul li:hover a {color:#B30000;background: transparent url(../images/bgON.gif) bottom left repeat-x;}

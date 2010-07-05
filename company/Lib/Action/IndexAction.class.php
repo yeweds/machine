@@ -18,14 +18,6 @@ class IndexAction extends GlobalAction
 		}
 		//公司简介
 		$intro=D('Pages')->where('id=1')->find();
-		//企业文化
-		$intro2=D('Pages')->where('id=2')->find();
-		//服务项目
-		$intro3=D('Pages')->where('id=3')->find();
-		//服务承诺
-		$intro5=D('Pages')->where('id=14')->find();
-		//常见问题		
-        $intro6=D('Pages')->where('id=15')->find();
 		//产品
 		$Product=D('Product')->limit('4')->order('id desc')->findall();
 		//链接
@@ -39,6 +31,10 @@ class IndexAction extends GlobalAction
 		$Announce=D('Announce')->order('id desc')->limit('8')->findall();
 		//幻灯
 		$Scroll=D('Scroll')->limit('5')->order('orders desc')->findall();
+		//分类
+		$map['module']=1;//分类
+		$Category=D('Category')->order("id desc")->where($map)->findall();
+        $this->assign('cate',$Category);     
 		$this->assign('Scroll',$Scroll);
 		$this->assign('Announce',$Announce);
 		$this->assign('Link',$Link);
