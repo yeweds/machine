@@ -1,23 +1,33 @@
 <div id="BodyLeft">
-    <div id="divcatname">
-        <img src="../Public/images/ProCatoryIco.gif" alt=""> 
-          <span id="ctl00_lblCatName">
-          <div id="masterdiv">
-           <volist name="cate" id="cate">
+	<div><img src="../Public/images/ProCatoryIco.gif" alt="" border="0"><br /></div>
+    <div id="divcatname"> 
+        <div id="masterdiv">
+         <volist name="cate" id="cate">
           <div class="MenuDiv">
-           <h5><a href="__ROOT__/Product/index/id/{$cate.id}.html" taget="_self"><img src="../Public/images/a.gif" class="dlnewsimg"><span class="mtitle">{$cate.title}</span></a></h5>
+           <h5 ><a href="__ROOT__/Product/index/id/{$cate.id}.html"><img src="../Public/images/a.gif" class="dlnewsimg"><span class="mtitle">{$cate.title}</span> </a>  </h5>
           </div>
           </volist>
-          <div style="height:20px"></div>
-          </div></span>
-     </div><!-- end divcatname -->
+          <div style="height:10px"></div>
+        </div>
+     </div>
      <div style="background-image: url(../Public/images/search.gif); width: 218px; background-repeat: repeat; height: 67px; color: white; line-height: 25px; letter-spacing: 2px;">
         &nbsp;&nbsp; 产品搜索<strong>:</strong><br>
-        &nbsp; &nbsp;<input id="Text1" type="text">
-        &nbsp;<input id="Submit1" value="搜索" type="submit">
+        &nbsp; &nbsp;<input id="Text1" type="text" />
+        &nbsp;<input id="Submit1" type="submit" value="搜索" />
      </div>
+    <div>
+    	<neq name="news" value="">
+        <div class="column_bar"><b>新闻动态</b></div>
+        <ul>
+         <volist name="news" id="news" offset="0" length='5'>
+        <li><a href="__ROOT__/Article/{$news.id}.html"
+            target="_blank">{$news.subject}</a></li>
+        </volist>
+        </ul>
+        </neq>
+    </div>
     <div id="contactus">
-     <img src="../Public/images/main_13.gif">
+     <img src="../Public/images/main_13.gif" border="0"><br />
      <strong><span 
 style="font-size: 11pt; font-family: 微软雅黑;">主营产品</span><span 
 style="font-size: 10pt; font-family: 微软雅黑;">&nbsp;<br>

@@ -6,10 +6,8 @@ class IndexAction extends GlobalAction
 		
 
 		$Article=D("Article");
-		//公司动态	
-		$company_news=$Article->order('id desc')->where('cid=2')->limit('5')->findall();
-		//行业动态
-		$business_news=$Article->order('id desc')->where('cid=3')->limit('5')->findAll();
+		//新闻动态	
+		$news=$Article->order('id desc')->limit('5')->findall();
 		if (S('pic')) {
 			$Pic=S('pic');
 		}else{
@@ -19,7 +17,7 @@ class IndexAction extends GlobalAction
 		//公司简介
 		$intro=D('Pages')->where('id=1')->find();
 		//产品
-		$Product=D('Product')->limit('4')->order('id desc')->findall();
+		$Product=D('Product')->limit('9')->order('hits desc')->findall();
 		//链接
 		if (S('link')) {
 			$Link=S('link');
@@ -38,8 +36,7 @@ class IndexAction extends GlobalAction
 		$this->assign('Scroll',$Scroll);
 		$this->assign('Announce',$Announce);
 		$this->assign('Link',$Link);
-		$this->assign('company_news',$company_news);
-		$this->assign('business_news',$business_news);
+		$this->assign('news',$news);
 		$this->assign('pic',$Pic);		
 		$this->assign('Product',$Product);	
 		$this->assign('intro',$intro);

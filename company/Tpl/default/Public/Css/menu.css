@@ -1,11 +1,10 @@
-/*code based on Stu Nicholls "ultimate dropdown menu"
-http://www.cssplay.co.uk*/
+/*code based on Stu Nicholls "ultimate dropdown menu"*/
 /*common styling*/
 /*menu container*/
 .menucontainer{background: #fff url(../images/bgOFF.gif) no-repeat bottom left;}
 /*basic menu styling*/
 .menu {float:left;宋体, 微软雅黑;width:100%;position:relative;font-size:12px;font-weight:bold;
-background:url(../images/bgOFF.gif) repeat-x bottom left;border-top:4px solid #B30000;}
+background:url(../images/bgOFF.gif) repeat-x bottom left;border-top:4px solid #B30000;z-index: 100;}
 .menu ul {padding:0;margin:0;list-style-type:none;float:left;position:relative;}
 .menu ul li {float:left;position:relative;display:inline;background:url(../images/bgDIVIDER.gif) no-repeat bottom right;}
 /*style of main items normal state*/

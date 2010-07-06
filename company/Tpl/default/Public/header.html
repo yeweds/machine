@@ -5,25 +5,28 @@
 <div class="menucontainer">
 <div class="menu">
 	<ul>
-		<li><a href="__ROOT__/" target="_self"> 网站首页</li>
+		<li><a href="__ROOT__/" target="_self" > 网站首页 </a></li>
 	<volist name="top_menu" id="top_menu">
 		<li><a href="<if condition="($top_menu.link eq '')">javascript:void(0)<else />__ROOT__/{$top_menu.link}</if>" target="_self">
-		{$top_menu.name}
-		<!--[if IE 7]><!-->
-		</a>
-		<!--<![endif]-->
+		{$top_menu.name}<!--[if IE 7]><!--></a><!--<![endif]--><!--[if IE 8]><!--></a><!--<![endif]-->
 		<neq name="top_menu.pids" value="">
-		<table class="table-menu"><tr><td><ul>
+		<table class="table-menu"><tr><td>
+        <ul>
 			<volist name="top_menu['pids']" id="p">
-			<li><a href="__ROOT__/{$p.link}" target="_self">{$p.subject}</a></li>
+			<li><a href="__ROOT__/{$p.link}" target="_self"> {$p.subject} </a></li>
 			</volist>
-		</ul></td></tr></table>
-		</neq>
-		<!--[if lte IE 6]>
-		</a>
-		<![endif]-->		
+		</ul>
+        </td></tr></table><!--[if lte IE 6]></a><![endif]-->
+		</neq>	
 		</li>		
 	</volist>
+	    <li><a href="javascript:void(0)">联系我们<!--[if IE 7]><!--></a><!--<![endif]--><!--[if IE 8]><!--></a><!--<![endif]--><table class="table-menu"><tr><td>
+			<ul>
+				<li><a href="__ROOT__/Contact.html">联系我们</a></li>	
+				<li><a href="__ROOT__/Feedback.html">在线留言</a></li>
+			</ul>
+        </td></tr></table><!--[if lte IE 6]></a><![endif]-->
+		</li>
 	</ul>
 </div>
 </div>

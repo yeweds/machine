@@ -1,6 +1,7 @@
 ﻿*{ margin:0px;padding:0px;}
 li{list-style-type:none;}
 ul{list-style-type:none;}
+img {border: 0;}
 body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
 #SiteTop
 {
@@ -25,14 +26,14 @@ body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
 #SiteBody
 {
 	margin: 0 auto;
-	width: 1004px;
+	width: 1003px;
 	height: auto;
 }
 #BodyLeft
 {
 	float: left;
 	margin: 0 auto;
-	width: 217px;
+	width: 218px;
 	height: auto;
 	background: none no-repeat;
 }
@@ -41,10 +42,7 @@ body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
 	width: 217px;
 	height: auto;
 	background-color: #edefef;
-	border-top-width: 1px;
-	border-left-width: 1px;
-	border-bottom-width: 1px;
-	border-right-width: 1px;
+	border-width:1px;
 	vertical-align: middle;
 }
 #contactus
@@ -79,6 +77,7 @@ body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
 	padding-bottom: 5px;
 	padding-top: 0px;
 }
+#footer{clear:both;}
 #SiteBottom
 {
 	clear:both;
@@ -86,8 +85,7 @@ body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
 	width: 1003px;
 	height: auto;
 	padding-top: 6px;
-	border-top: 2px solid;
-	
+	border-top: 2px solid;	
 }
 .HomeProdpic{border:1px solid #E7E7E7; width:150px;height:120px;text-align:center;}
 .HomeProdpic img{padding:2px;width:145px;height:118px;border:0px;}
@@ -97,7 +95,7 @@ body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
 #Links{margin:0 auto;width:962px;height:53px; padding-top:10px; border:1px dotted #999999; background-color:#E8E8E8;text-align:center;}
 #Links img{border:0px;}
 .liline{line-height:0px; margin:0px; padding:0px;height:5px;}
-.dlnewsimg{padding-right:5px;vertical-align:middle;border:0px}
+.dlnewsimg{padding-right:5px;vertical-align:middle;border:0px;margin-left:10px;}
 #NeiTopTitle{text-align:right;border-bottom: gainsboro 1px solid;font-size:9pt;font-family: 微软雅黑;font-weight:bold;padding:15px 25px 5px 0px;}
 #BodyRightimage
 {
@@ -270,8 +268,9 @@ span.pager a.current
 .rollBox .ScrCont{width:10000000px;}
 .rollBox #List1,.rollBox #List2{float:left;}
 
-.MenuDiv{display:block;margin:0px; padding:0px}
-.MenuDiv span.mtitle{margin:10px 10px;padding:10px 20px}
-.MenuDiv h5{display:block;color:#6c6b6b;padding:0px; margin:0px;font-size:12px;text-decoration:none;}
-.MenuDiv h5 a{display:block;text-decoration:none;border-bottom:solid 1px #cdcdcd;}
-.MenuDiv h5 a:hover {display:block;background-color:ghostwhite;text-decoration:none;}
+.MenuDiv{width: 217px;margin:0; padding:0;}
+.MenuDiv span.mtitle{margin:10px 10px;}
+.MenuDiv h5{display:block;color:#6c6b6b;padding:0; margin:0;font-size:12px;text-decoration:none;}
+.MenuDiv a{display:block;text-decoration:none;}
+.MenuDiv a:hover {display:block;background-color:ghostwhite;text-decoration:none;}
+.column_bar{background:url(../images/column_bar.gif) no-repeat transparent;}
