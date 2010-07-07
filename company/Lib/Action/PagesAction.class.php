@@ -7,7 +7,11 @@ class PagesAction extends GlobalAction
 		$Pages=D("Pages");
 		$list=$Pages->find($id);
 		$this->assign('vo',$list);
-		if($id){$this->left_menu($id);}
+		//if($id){$this->left_menu($id);}
+		//分类
+		$map['module']=1;//分类
+		$Category=D('Category')->order("id desc")->where($map)->findall();
+        $this->assign('cate',$Category);   
 		$this->display();
 	}
 	public function about()

@@ -40,6 +40,7 @@ class SettingsAction extends GlobalAction{
 		if($data["thumbsuffix"]=='')$data["thumbsuffix"]='_thumb' ;
 		if($data["seotitle"]=='')$data["seotitle"]='shuguang cms' ;
 		if($data["seokeywords"]=='')$data["seokeywords"]='shuguang,cms' ;
+		if($data["postcode"]=='')$data["postcode"]='' ;
 		/**/
 		//更新配置数据
         foreach($data AS $key => $value) {

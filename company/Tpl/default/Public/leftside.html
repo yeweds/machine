@@ -17,7 +17,7 @@
      </div>
     <div>
     	<neq name="news" value="">
-        <div class="column_bar"><b>新闻动态</b></div>
+        <div class="column_bar"><b style="font-family: 宋体;font-size:12px;font-weight:bold;color:	#C00">新闻动态</b></div>
         <ul>
          <volist name="news" id="news" offset="0" length='5'>
         <li><a href="__ROOT__/Article/{$news.id}.html"
@@ -27,23 +27,14 @@
         </neq>
     </div>
     <div id="contactus">
-     <img src="../Public/images/main_13.gif" border="0"><br />
-     <strong><span 
-style="font-size: 11pt; font-family: 微软雅黑;">主营产品</span><span 
-style="font-size: 10pt; font-family: 微软雅黑;">&nbsp;<br>
-             </span>
-      </strong>
-      <span style="color: black; font-family: 宋体; margin-left: 10px;"> 混凝土搅拌站、混凝土搅拌输送车、汽</span>
-     <span style="color: black; font-family: 宋体; margin-left: 10px;">车起重机、高空作业车、干粉砂浆搅拌</span>
-     <span style="color: black; font-family: 宋体; margin-left: 10px;">设备建筑物回收设备、塔吊、破碎机、</span>
-     <span style="color: black; font-family: 宋体; margin-left: 10px;">振动筛矿山机械设备等<br><br></span>
-     <strong><span style="font-size: 11pt; font-family: 微软雅黑;">联系方式<br></span></strong>
-     <span style="font-family: 宋体; margin-left: 10px;">销售电话：0751-8831283</span><br>
-     <span style="font-family: 宋体; margin-left: 10px;">销售传真：0751-8831208</span><br>
-     <span style="font-family: 宋体; margin-left: 10px;">通迅地址：韶关市十里亭</span><br>
-     <span style="font-family: 宋体; margin-left: 10px;">邮政编码：512031</span><br>
-     <span style="font-family: 宋体; margin-left: 10px;">邮箱地址：sgxygs@sgxy.com</span><br>
-     <span style="font-family: 宋体; margin-left: 10px;">公司传真：0751-8853643</span><br>
+     <img src="../Public/images/main_13.gif" border="0" /><br />
+     <strong><span style="font-size: 11pt; font-family: 黑体;">联系方式</span></strong>
+     <span style="font-size: 10pt; font-family: 微软雅黑;">&nbsp;</span><br>
+     <span style="font-family: 宋体; margin-left: 10px;">销售电话：{$Think.config.TELEPHONE}</span><br>
+     <span style="font-family: 宋体; margin-left: 10px;">邮政编码：{$Think.config.POSTCODE}</span><br>
+     <span style="font-family: 宋体; margin-left: 10px;">邮箱地址：{$Think.config.EMAIL}</span><br>
+     <span style="font-family: 宋体; margin-left: 10px;">公司传真：{$Think.config.FAX}</span><br>
+     <span style="font-family: 宋体; margin-left: 10px;">通迅地址：{$Think.config.ADDRESS}</span><br>
    </div><!-- end contactus -->
 
 </div><!-- end BodyLeft -->

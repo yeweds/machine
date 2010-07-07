@@ -1,48 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><present name="titler">{$titler}<else />{$vo.subject}</present>{$vo.subject} {$sitename}-{$seotitle} </title>
+<meta http-equiv="x-ua-compatible" content="ie=8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="robots" content="all" />
+<meta content="{$seokeywords}" name="keywords" />
+<meta content="{$seodescription}" name="description" />
+<link href="__PUBLIC__/Js/jquery/css/redmond/jquery-ui-1.7.3.custom.css" rel="stylesheet" />
+<link href="../Public/Css/style.css" rel="stylesheet" />
+<link href="../Public/Css/menu.css" rel="stylesheet" />
+<!--[if lte IE 6]>
+<link href="../Public/Css/menu_ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/js/jquery-ui-1.7.3.custom.min.js"></script>
+</head>
+<body>
 <include file="Public:header" />
-<!--<script type="text/javascript">
-function $(id) {
-	return document.getElementById(id);
-}
-function fleshVerify(){
-//重载验证码
-var timenow = new Date().getTime();
-document.getElementById('verifyImg').src= '__URL__/verify/'+timenow;
-}
-</script>-->
+<div id="SiteBody">
+    <div id="BodyLeft">
+        <div><img src="../Public/images/ProCatoryIco.gif" alt="" border="0"><br /></div>
+        <div id="divcatname"> 
+            <div id="masterdiv">                   
+             <volist name="cate" id="vol">
+              <div class="MenuDiv">
+               <h5 ><a href="__ROOT__/Article/index/id/{$vol.id}.html"><img src="../Public/images/a.gif" class="dlnewsimg"><span class="mtitle">{$vol.title}</span> </a>  </h5>
+              </div>
+              </volist>
+              <div style="height:10px"></div>
+            </div>
+         </div>
+         <div style="background-image: url(../Public/images/search.gif); width: 218px; background-repeat: repeat; height: 67px; color: white; line-height: 25px; letter-spacing: 2px;">
+            &nbsp;&nbsp; 产品搜索<strong>:</strong><br>
+            &nbsp; &nbsp;<input id="Text1" type="text" />
+            &nbsp;<input id="Submit1" type="submit" value="搜索" />
+         </div>
+        <div id="contactus">
+         <img src="../Public/images/main_13.gif" border="0" /><br />
+         <strong><span style="font-size: 11pt; font-family: 黑体;">联系方式</span></strong>
+         <span style="font-size: 10pt; font-family: 微软雅黑;">&nbsp;</span><br>
+         <span style="font-family: 宋体; margin-left: 10px;">销售电话：{$Think.config.TELEPHONE}</span><br>
+         <span style="font-family: 宋体; margin-left: 10px;">邮政编码：{$Think.config.POSTCODE}</span><br>
+         <span style="font-family: 宋体; margin-left: 10px;">邮箱地址：{$Think.config.EMAIL}</span><br>
+         <span style="font-family: 宋体; margin-left: 10px;">公司传真：{$Think.config.FAX}</span><br>
+         <span style="font-family: 宋体; margin-left: 10px;">通迅地址：{$Think.config.ADDRESS}</span><br>
+       </div><!-- end contactus -->
+    </div><!-- end BodyLeft -->
+    
+	<div id="BodyRight">
+      <div id="BodyRightimage"><img src="../Public/images/banner_new.jpg" 
+style="width: 770px;height:158px;" border="0"></div>
+      <div id="NeiTopTitle">
+        <span style="font-size: 11pt; color: black; padding-right:300px;font-family: 宋体;">{$vo.subject}</span><a href="__ROOT__/">首页</a> 
+&gt;&gt;<span style="padding-left: 8px;">新闻动态</span>
+      </div>
+      <div id="NeiBodyContent">
+        <div class="contact">
+        {$vo.content}
+        </div>
+        <div id="mainfooter">
+        <div style="text-align:left;margin:5px 20px"> 发布：{$vo.postdate|date="Y-m-d",###}　浏览：{$vo.hits}</div>
+        <div style="text-align:left;margin:5px 20px">上一篇:{$front}</div>
+        <div style="text-align:left;margin:5px 20px">下一篇:{$after}</div>
+        </div>
 
-
-<div class="main940">
-
-<div class="sub">
-<div class="title"><h2>新闻动态</h2></div>
-
-<ul class="subList">
-<volist name="cate" id="vol">
-<li class="blue"><a href="__ROOT__/Article/index/id/{$vol.id}.html"><strong>{$vol.title}</strong></a></li>
-</volist>
-</ul>
-<div class="subg"></div>
-</div>
-<!-- sub -->
-
-<div class="main">
-<div class="banner"><img src="../Public/images/br.jpg" /></div>
-<div class="location"><span>当前位置：</span><a href="__ROOT__/">首页</a> > <a
-		href="__ROOT__/Article.html">新闻动态 </a></div>
-<div class="endtitle"><h1>{$vo.subject}</h1></div>
-<div class="mainEnd">
-<div class="contact">
-{$vo.content}
-</div>
-<div id="mainfooter">
-<div style="text-align:left;margin:5px 20px"> 发布：{$vo.postdate|date="Y-m-d",###}　浏览：{$vo.hits}</div>
-<div style="text-align:left;margin:5px 20px">上一篇:{$front}</div>
-<div style="text-align:left;margin:5px 20px">下一篇:{$after}</div>
-</div>
-
-</div>
-<!-- main -->
-
-</div>
-
-<include file="Public:footer" />
+    </div><!--end BodyRight -->    
+    
+</div><!-- end sitebody -->
+<include file="Public:footer" />    

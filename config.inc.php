@@ -7,7 +7,7 @@ return array(
 	'STOPD'=>'系统维护中.....',
 	'STATUS'=>1, 
 	'DB_FIELDS_CACHE'=>false, 
-	'EMAIL'=>'xxrs90@hotmail.com',
+	'EMAIL'=>'xxrs90@126.com',
 	'ADDRESS'=>'广东省深圳市南山区科技园数字技术园A3栋3A',
 	'TELEPHONE'=>'0000-0000000',
 	'FAX'=>'0000-0000000',
@@ -35,5 +35,6 @@ return array(
 	'DATA_CACHE_TYPE'=>'File',
 	'DATA_CACHE_SUBDIR'=>false, 
 	'SDATA_TIME'=>60, 
+	'POSTCODE'=>123, 
 );
 ?>
