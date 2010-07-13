@@ -10,25 +10,14 @@ class FeedbackAction extends GlobalAction
 		$p=new page($count,$listRows);
 		$list=$Feedback->findAll('ischecked=1','*','id desc',$p->firstRow.','.$p->listRows);
 		$page=$p->show();
-		$this->left_menu();
+		//分类
+		$map['module']=1;//分类
+		$Category=D('Category')->order("id desc")->where($map)->findall();
+        $this->assign('cate',$Category);
 		$this->assign('titler','留言反馈');
 		$this->assign('list',$list);
 		$this->assign('page',$page);
 		$this->display();
-	}
-	public function left_menu()
-	{
-		$top_menu = D('Top_menu');
-		$tp = $top_menu->where("name='服务项目'")->findAll('','id, name,pid');
-		$menu = array();
-		$Pages = D('Pages');
-		$ps = $Pages->where("id in (".$tp[0]['pid'].")")->findAll();
-		for ($i=0;$i<count($ps);$i++){
-			$menu[$i]['subject']=$ps[$i]['subject'];
-			$menu[$i]['link']='Pages/'.$ps[$i]['id'].'.html';
-		}
-		$this->assign('cate_name', $tp[0]['name']);
-		$this->assign('left_menu', $menu);
 	}
 	public function write(){
 

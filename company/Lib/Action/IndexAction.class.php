@@ -2,9 +2,7 @@
 class IndexAction extends GlobalAction 
 {
 	
-	public function Index(){
-		
-
+	public function Index(){		
 		$Article=D("Article");
 		//新闻动态	
 		$news=$Article->order('id desc')->limit('5')->findall();

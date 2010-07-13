@@ -1,52 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><present name="titler">{$titler}<else />{$vo.subject}</present>{$vo.subject} {$sitename}-{$seotitle} </title>
+<meta http-equiv="x-ua-compatible" content="ie=8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="robots" content="all" />
+<meta content="{$seokeywords}" name="keywords" />
+<meta content="{$seodescription}" name="description" />
+<link href="__PUBLIC__/Js/jquery/css/redmond/jquery-ui-1.7.3.custom.css" rel="stylesheet" />
+<link href="../Public/Css/style.css" rel="stylesheet" />
+<link href="../Public/Css/menu.css" rel="stylesheet" />
+<!--[if lte IE 6]>
+<link href="../Public/Css/menu_ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/js/jquery-ui-1.7.3.custom.min.js"></script>
+</head>
+
+<body>
 <include file="Public:header" />
-
-<div class="main940">
-
-<div class="sub">
-<div class="title"><h2> 成功案例</h2></div>
-<ul class="subList">
- <volist name="cate" id="cate">
-<li><a href="__ROOT__/Product/index/id/{$cate.id}.html"><strong>{$cate.title}</strong></a></li>
-</volist>
-</ul>
-<div class="subg"></div>
-</div>
-<!-- sub -->
-
-<div class="main">
-<div class="banner"><img src="../Public/images/banner04.jpg" /></div>
-<div class="location"><span>当前位置：</span><a href="">首页</a> > 成功案例</div>
-<div class="title"><h1>成功案例</h1></div>
-
-<div class="mainList">
-<div class="anli">
-<ul>
-<php>
-if ($count>0){
-	foreach ($Product as $pro){
-</php>
-<li><a href="__ROOT__/Product/{$pro.id}.html" target="_blank" title="{$pro.subject}" >
-	<if condition="$pro['attachment'] neq ''">
-	<img src="__ROOT__/attachments/product/{$pro.attachpath}/{$pro.attachthumb}" alt="{$pro.subject}" width="200" height="110" border="0" />
-	<else />
-	<img src="../Public/images/nopic.jpg" width="200" height="110" border="0" />
-	</if>
-	{$pro.subject|msubstr=0,10}
-	</a></li>
-<php>
-	}
-}else{
-	echo "<li>此类无产品</li>";
-}
-</php>
-</ul>
-</div>
-<div id="page-info">{$page}</div>
-</div>
-
-</div>
-<!-- main -->
-
-</div>
-
-<include file="Public:footer" />
+<div id="SiteBody">
+    <include file="Public:leftside" />
+	<div id="BodyRight">
+      <div id="BodyRightimage"><img src="../Public/images/main_31.gif" 
+style="width: 770px;" border="0"></div>
+      <div id="NeiTopTitle"><img src="../Public/images/main_22.gif" 
+style="margin-left: 10px;" align="left" border="0">
+        <span style="font-size: 11pt; color: black; padding-right: 
+550px; font-family: 宋体;"></span><a href="__ROOT__/">首页</a> 
+&gt;&gt;<span style="padding-left: 8px;">产品展示</span>
+      </div>
+      <div id="NeiBodyContent">
+	    <div style="height:30px;width:100px"><span style="font-size:12px;font-weight:bold;vertical-align:middle; display:block">产品类别：</div>
+		<div class="catlist">
+			<ul>
+			<volist name="catelist" id="cvo">
+			<li><img src="../Public/images/a.gif" class="dlnewsimg"><a href="__ROOT__/Product/index/id/{$cvo.id}.html"><strong>{$cvo.title}</strong></a></li>
+			</volist>
+			</ul>
+		</div>
+		<div style="border-bottom:1px solid gainsboro;"></div>
+		<div><h4>产品列表：</h4></div>
+		<div class="mainList">
+		<div class="anli">
+		<ul>
+		<php>
+		if ($count>0){
+			foreach ($Product as $pro){
+		</php>
+		<li><a href="__ROOT__/Product/{$pro.id}.html" target="_blank" title="{$pro.subject}" >
+			<if condition="$pro['attachment'] neq ''">
+			<img src="__ROOT__/attachments/product/{$pro.attachpath}/{$pro.attachthumb}" alt="{$pro.subject}" width="200" height="110" border="0" />
+			<else />
+			<img src="../Public/images/nopic.jpg" width="200" height="110" border="0" />
+			</if>
+			{$pro.subject|msubstr=0,10}
+			</a></li>
+		<php>
+			}
+		}else{
+			echo "<li>此类无产品</li>";
+		}
+		</php>
+		</ul>
+		</div>
+		<div id="page-info">{$page}</div>
+		</div>	  
+	  </div><!--end NeiBodyContent --></div>
+    </div><!--end BodyRight -->
+  
+</div><!-- end sitebody -->
+<include file="Public:footer" />    

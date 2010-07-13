@@ -20,6 +20,7 @@ class ProductAction extends GlobalAction
 		$Category=D('Category')->order("id desc")->where($map)->findall();
 		$this->assign('titler','产品中心');
 		$this->assign('cate',$Category);
+		$this->assign('catelist', $Category);
 		$this->assign('Product',$Product);
 		$this->assign('count',$count);
 		$this->assign('page',$page);

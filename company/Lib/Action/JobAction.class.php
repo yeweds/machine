@@ -14,7 +14,10 @@ class JobAction extends GlobalAction
 		$this->assign('titler','人才招聘');	
 		$this->assign('list',$list);
 		$this->assign('page',$page);
-		$this->left_menu();
+		//分类
+		$map['module']=1;//分类
+		$Category=D('Category')->order("id desc")->where($map)->findall();
+        $this->assign('cate',$Category);
 		$this->display();
 	}
 	public function read(){
@@ -25,7 +28,10 @@ class JobAction extends GlobalAction
 			$this->error("招聘信息不存在");
 		}
 		$this->assign('vo',$get);
-		$this->left_menu();
+		//分类
+		$map['module']=1;//分类
+		$Category=D('Category')->order("id desc")->where($map)->findall();
+        $this->assign('cate',$Category);
 		$this->display();		
 	}
 	public function resume(){
@@ -53,23 +59,11 @@ class JobAction extends GlobalAction
         }else{ 
             $this->error($Resume->getError()); 
         }
-        $this->left_menu();
+		//分类
+		$map['module']=1;//分类
+		$Category=D('Category')->order("id desc")->where($map)->findall();
+        $this->assign('cate',$Category);
  		$this->display("index");
 	}
-	public function left_menu()
-	{
-		$top_menu = D('Top_menu');
-		$tp = $top_menu->where("name='服务项目'")->findAll('','id, name,pid');
-		$menu = array();
-		$Pages = D('Pages');
-		$ps = $Pages->where("id in (".$tp[0]['pid'].")")->findAll();
-		for ($i=0;$i<count($ps);$i++){
-			$menu[$i]['subject']=$ps[$i]['subject'];
-			$menu[$i]['link']='Pages/'.$ps[$i]['id'].'.html';
-		}
-		$this->assign('cate_name', $tp[0]['name']);
-		$this->assign('left_menu', $menu);
-	}
-
 }
 ?>
