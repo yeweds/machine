@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2010 年 07 月 14 日 07:39
+-- 生成日期: 2010 年 07 月 14 日 10:30
 -- 服务器版本: 5.0.51
 -- PHP 版本: 5.2.6
 
@@ -422,16 +422,17 @@ CREATE TABLE `cms_scroll` (
   `postdate` int(11) NOT NULL COMMENT '添加时间',
   `orders` smallint(6) NOT NULL COMMENT '排序数值，越小排得越前',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- 导出表中的数据 `cms_scroll`
 --
 
 INSERT INTO `cms_scroll` (`id`, `subject`, `url`, `attachment`, `content`, `postdate`, `orders`) VALUES
-(1, '1', 'http://www.osphp.com.cn', '1.jpg', '', 1231923826, 0),
-(2, '2', 'http://www.osphp.com.cn', '2.jpg', 'eeeeeee', 1231923863, 0),
-(3, '3', 'http://www.osphp.com.cn', '3.jpg', 'sdaf', 1231932490, 0);
+(1, '1', 'http://__ROOT__/', 'reel_1.jpg', '1', 1231923826, 1),
+(2, '2', 'http://www.osphp.com.cn', 'reel_2.jpg', 'eeeeeee', 1231923863, 0),
+(3, '3', 'http://www.osphp.com.cn', 'reel_3.jpg', 'sdaf', 1231932490, 0),
+(5, '4', 'http://__ROOT__/', 'reel_4.jpg', '4', 1279102695, 4);
 
 -- --------------------------------------------------------
 
@@ -465,8 +466,8 @@ INSERT INTO `cms_settings` (`title`, `values`) VALUES
 ('attachdir', 'Attachments'),
 ('attachsize', '2097192'),
 ('attachext', 'jpg,gif,png'),
-('thumbmaxwidth', '300'),
-('thumbmaxheight', '200'),
+('thumbmaxwidth', '75'),
+('thumbmaxheight', '75'),
 ('thumbsuffix', '_thumb'),
 ('tmpl_cache_time', '2'),
 ('sql_debug_log', 'false'),
