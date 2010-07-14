@@ -5,3 +5,6 @@ Logs/**/*
 Attachments/**/*
 *.swp
 .gitignore
+config.inc.php
+database.inc.php
+
