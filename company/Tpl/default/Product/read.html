@@ -30,21 +30,24 @@ $(document).ready(function(){
 <div id="SiteBody">
 	<include file="Public:leftside" />
 	<div id="BodyRight">
-      <div id="BodyRightimage"><img src="../Public/images/banner_new.jpg" 
+      <div id="BodyRightimage"><img src="../Public/images/main_31.gif" 
 style="width: 770px;height:158px;" border="0"></div>
-      <div id="NeiTopTitle"><img src="../Public/images/main_22.gif" 
-style="margin-left: 10px;" align="left" border="0">
-        <span style="font-size: 11pt; color: black; padding-right: 
-550px; font-family: 宋体;">{$Ctitle.title}</span><a href="__ROOT__/">首页</a> 
-&gt;&gt;<span style="padding-left: 8px;">{$Ctitle.title}</span>
+      <div id="NeiTopTitle">	    
+	    <div style="float:left"><img src="../Public/images/main_22.gif" style="margin-left: 10px;" align="left" border="0">
+		    <span style="padding-left:8px;text-align:left;font-family: 宋体;font-size:12px;font-weight:bold;color:#C00">产品展示</span>
+		</div>
+		<div style="float:right"> 
+			<span style="padding-right:8px;"><a href="__ROOT__/">首页</a> &gt;&gt; 产品展示</span>
+		</div>
+		<br style="clear:both" />
       </div>
       <div id="NeiBodyContent">
 		<div>{$vo.subject}</div>
 		<div>
 		<if condition="$vo['attachment'] neq ''">
-		<a href="__ROOT__/attachments/product/{$vo.attachpath}/{$vo.attachment}" class="lightbox" rel="flowers" title="{$vo.subject}"><img src="__ROOT__/attachments/product/{$vo.attachpath}/{$vo.attachthumb}" alt="{$vo.subject}" border="0" width="200" height="110" /></a>
+				<a href="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachment}" class="lightbox" rel="flowers" title="{$vo.subject}"><img src="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachthumb}" alt="{$vo.subject}" border="0" width="200" height="110" /></a>
 		<else />
-		<img src="../Public/images/nopic.jpg" width="200" height="110" border="0" />
+		<img src="../Public/images/nopic.jpg" width="200" height="110" border="0" alt="" />
 		</if></div>
 		<div><neq name="list['spec']" value="">产品型号:{$vo.spec}<br></neq></div>
 		<div><neq name="list['size']" value="">产品尺寸:{$vo.size}</neq></div>
