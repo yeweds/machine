@@ -3,7 +3,7 @@
 if (!defined('THINK_PATH')) exit();
 return array(
 	'SITENAME'=>'森诺特软件',
-	'SITEURL'=>'http://test.company.com',
+	'SITEURL'=>'http://michaeljoney.gicp.net',
 	'STOPD'=>'系统维护中.....',
 	'STATUS'=>1, 
 	'DB_FIELDS_CACHE'=>false, 
@@ -29,7 +29,7 @@ return array(
 	'ATTACH'=>true, 
 	'COMPANY'=>'森诺特软件',
 	'THINK_HTML_TOKEN'=>'',
-	'LINKMAN'=>'刘振',
+	'LINKMAN'=>'肖潇',
 	'ROUTER_ON'=>true, 
 	'HTML_URL_SUFFIX'=>'.html',
 	'DATA_CACHE_TYPE'=>'File',

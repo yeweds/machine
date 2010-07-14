@@ -7,7 +7,7 @@
 }
 /*--Window/Masking Styles--*/
 .window {
-	height:286px;	width: 790px;
+	height:286px;	width: 776px;
 	overflow: hidden; /*--Hides anything outside of the set width/height--*/
 	position: relative;
 }

@@ -90,8 +90,8 @@ class IndexAction extends GlobalAction{
 			0 => './company/Temp',
 		    1 => './company/Cache',
 			//2 => './Application/Runtime/Logs',
-			2 => './Admin_App/Temp',
-			3 => './Admin_App/Cache'
+			2 => './Admin_App/Temp/',
+			3 => './Admin_App/Cache/'
 		    );
 		foreach ($temp as $v) {
 			$this->delDir($v);
