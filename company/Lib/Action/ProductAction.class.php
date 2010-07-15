@@ -50,7 +50,12 @@ class ProductAction extends GlobalAction
 		$list=$Product->find($id);
 		if (!$list) {
 			$this->error("产品不存在");
-		}		
+		}	
+		//分类
+		$Product->setINC('hits','id='.$id);
+		$map['module']=1;//分类
+		$Category=D('Category')->order("id desc")->where($map)->findall();
+		$this->assign('cate',$Category);			
 		$this->assign('vo',$list);
 		$this->display();
 		
@@ -68,7 +73,6 @@ class ProductAction extends GlobalAction
         }else{ 
             $this->error($Order->getError()); 
         }		
-        dump($id);
 		$this->display("index");
 	}
 

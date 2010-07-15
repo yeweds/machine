@@ -287,5 +287,5 @@ span.pager a.current
 .mainList .anli li{float:left; display:inline;background:url(../images/case_bg.png) no-repeat; width:207px;height:140px;padding:3px 0 0 3px;margin:20px 2px 0 14px;text-align:center}
 .mainList .anli li img{display:block;margin-bottom:10px; text-align:left}
 /* categories list */
-.catelist ul{margin:5px 20px}
-.catelist li{display:inline;margin:5px 10px;}
+.catelist ul{margin:5px 20px;}
+.catelist li{display:inline;margin:5px 10px; }
