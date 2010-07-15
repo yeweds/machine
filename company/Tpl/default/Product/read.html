@@ -43,7 +43,7 @@ $(document).ready(function(){
 		<div>{$vo.subject}</div>
 		<div>
 		<if condition="$vo['attachment'] neq ''">
-				<a href="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachment}" class="lightbox" rel="flowers" title="{$vo.subject}"><img src="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachthumb}" alt="{$vo.subject}" border="0" width="200" height="110" /></a>
+				<a href="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachment}" class="lightbox" rel="flowers" title="{$vo.subject}"><img src="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachthumb}" alt="{$vo.subject}" border="0" width="{}" height="{}" /></a>
 		<else />
 		<img src="../Public/images/nopic.jpg" width="200" height="110" border="0" alt="" />
 		</if></div>
