@@ -38,7 +38,7 @@
 		<div>{$vo.subject}</div>
 		<div>
 		<if condition="$vo['attachment'] neq ''">
-				<a href="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachment}" class="MagicZoom" id="zoom1" rel="flowers" title="{$vo.subject}"><img src="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachthumb}" alt="{$vo.subject}" border="0" width="<php>echo intval(C('THUMBMAXWIDTH'))*2;</php>" height="<php>echo intval(C('THUMBMAXHEIGHT')) * 2;</php>" /></a>
+				<a href="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachment}" class="MagicZoom" id="zoom1" rel="flowers" title="{$vo.subject}"><img src="__ROOT__/Attachments/product/{$vo.attachpath}/{$vo.attachthumb}" alt="{$vo.subject}" border="0" width="<php>echo intval(C('THUMBMAXWIDTH'));</php>" height="<php>echo intval(C('THUMBMAXHEIGHT'));</php>" /></a>
 		<else />
 		<img src="../Public/images/nopic.jpg" width="200" height="110" border="0" alt="" />
 		</if><img class="MagicZoomLoading" src="../Public/images/ajax-loader.gif" alt="Loading Zoom, please wait"/></div>
