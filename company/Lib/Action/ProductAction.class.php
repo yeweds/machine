@@ -40,9 +40,34 @@ class ProductAction extends GlobalAction
 		$Category=D('Category')->order("id desc")->where($map)->findall();
 		$this->assign('cate',$Category);
 		$this->assign('vo',$list);
+		$this->display();	
+	}
+	public function search(){
+		$keyword=$_POST['keyword'];
+		$Product=D("Product");
+		$where['subject']  = array('like', '%'.$keyword.'%');   
+		$where['spec']  = array('like', '%'.$keyword.'%');   
+		$where['_logic'] = 'or';      		 
+		$count=$Product->count($where);
+		//if($count<=1)$this->error('此类别无产品');
+		import("ORG.Util.Page");
+		$listRows=6;
+		$p=new page($count,$listRows);
+		$list=$Product->findAll($where,'*','id desc',$p->firstRow.','.$p->listRows);
+		//$list=$p->order('pid desc')->limit("$p->firstRow.','.$p->listRows")->findAll();
+		$page = $p->show();	
+		/**/
+		//分类
+		$map['module']=1;//分类
+		$Category=D('Category')->order("id desc")->where($map)->findall();
+		$this->assign('keyword', $keyword);
+		$this->assign('titler','产品中心');
+		$this->assign('cate',$Category);
+		$this->assign('catelist', $Category);
+		$this->assign('Product',$Product);
+		$this->assign('count',$count);
+		$this->assign('page',$page);
 		$this->display();
-		
-		
 	}
 	public function order(){
 		$id=intval($_GET['id']);

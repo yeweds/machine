@@ -35,7 +35,10 @@
          </div>
          <div style="background-image: url(../Public/images/search.gif); width: 218px; background-repeat: repeat; height: 67px; color: white; line-height: 25px; letter-spacing: 2px;">
 			<div>&nbsp;&nbsp; 产品搜索 : </div>
-			<div> &nbsp; <input id="Text1" type="text" size="20" /> &nbsp;<input id="Submit1" type="submit" value="搜索" /></div>
+			<div> <form action="__ROOT__/Product/search" method="post" >
+			  	&nbsp;	<input id="search" type="text" name="keyword" size="20" /> &nbsp;<input id="Submit1" type="submit" value="搜索" />
+			  </form>
+			 </div>
          </div>
         <div>
             <neq name="news" value="">
