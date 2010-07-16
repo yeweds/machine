@@ -43,7 +43,7 @@ class ProductAction extends GlobalAction
 		$this->display();	
 	}
 	public function search(){
-		$keyword=$_POST['keyword'];
+		$keyword=trim($_POST['keyword']);
 		$Product=D("Product");
 		$where['subject']  = array('like', '%'.$keyword.'%');   
 		$where['spec']  = array('like', '%'.$keyword.'%');   
