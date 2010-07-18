@@ -269,9 +269,9 @@ span.pager a.current
 .rollBox #List1,.rollBox #List2{float:left;}
 /* column menu */
 .MenuDiv{width: 217px;margin:0; padding:0;}
-.MenuDiv span.mtitle{margin:10px 10px;}
+.MenuDiv span.mtitle{margin:10px 5px;}
 .MenuDiv h5{display:block;color:#6c6b6b;padding:0; margin:0;font-size:12px;text-decoration:none;}
-.MenuDiv a{display:block;text-decoration:none;}
+.MenuDiv a{display:block;text-decoration:none;padding:4px 0px;}
 .MenuDiv a:hover {display:block;background-color:ghostwhite;text-decoration:none;}
 .column_bar {margin-top:10px;}
 .title_bar {height:28px; line-height:28px;display:block; overflow:hidden; vertical-align:middle}
