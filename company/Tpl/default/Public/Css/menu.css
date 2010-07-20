@@ -15,7 +15,7 @@ background:url(../images/bgOFF.gif) repeat-x bottom left;border-top:4px solid #B
 /*clear the main nav bg*/
 .menu ul li ul li{background:none;}
 /*style for table of sub nav items*/
-table {margin:-1px;border-collapse:collapse;font-size:12px;font-weight:normal;}
+table {margin:-1px;border-collapse:collapse;font-size:12px;font-weight:normal;color:#000000}
 /*specific to non IE browsers*/
 /*main nav over state*/
 .menu ul li:hover a {color:#B30000;background: transparent url(../images/bgON.gif) bottom left repeat-x;}
