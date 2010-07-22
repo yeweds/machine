@@ -25,7 +25,7 @@
 	z-index: 1; /*--Assures the paging stays on the top layer--*/
 	text-align: center;
 	line-height: 40px;
-	background: url(../images/paging_bg2.png) no-repeat;
+	background: url(../images/paging_bg2.gif) no-repeat;
 	display: none; /*--Hidden by default, will be later shown with jQuery--*/
 }
 .paging a {
