@@ -2,7 +2,7 @@
 li{list-style-type:none;}
 ul{list-style-type:none;}
 img {border: 0;}
-body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
+body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#2B2729;}
 #SiteTop
 {
 	margin: 0 auto;
@@ -156,9 +156,9 @@ body{margin:0 auto;font:12px/150% Arial, Helvetica, sans-serif;color:#615F60;}
 	padding-top: 5px;
 }
 
-a:link.top {color: #615F60;text-decoration: none;}
-a:visited.top {color: #615F60;text-decoration: none;}
-a:hover.top {color: #85ABEC;text-decoration:underline;}
+a:link.top {color: #2B2729;text-decoration: none;}
+a:visited.top {color: #2B2729;text-decoration: none;}
+a:hover.top {color: #615F60;text-decoration:underline;}
 a:active.top {color: #615F60;text-decoration: none;}
 
 a:link {color: #615F60;text-decoration: none;}
