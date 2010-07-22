@@ -52,10 +52,15 @@ class SettingsAction extends GlobalAction{
 		foreach ($list AS $title){
 			$key=strtoupper($title['title']);
 			$value=$title['values'];
-			if(strtolower($value)=="true" || strtolower($value)=="false" || is_numeric($value))
-				$content .= "\t'$key'=>$value, \r\n";
-			else
+			if(strtolower($value)=="true" || strtolower($value)=="false" || is_numeric($value)){
+				if ($key=='FAX'){
+					$content .= "\t'$key'=>'$value',\r\n";
+				}else{
+					$content .= "\t'$key'=>$value, \r\n";
+				}
+			}else{
 				$content .= "\t'$key'=>'$value',\r\n";
+			}
 		}
 		$content .= ");\r\n?>";
 		//写入配置文件
